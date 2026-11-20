@@ -1,26 +1,73 @@
-/* Sheets Edit Counter - Floating Badge on Google Sheets */
-#sheets-counter-floating-badge {
+/* Floating Button inside Google Sheets */
+#sheets-counter-widget-btn {
   position: fixed;
-  bottom: 20px;
-  right: 24px;
-  z-index: 999999;
-  background: #0f766e;
+  bottom: 24px;
+  right: 28px;
+  z-index: 9999999;
+  background: linear-gradient(135deg, #0d9488, #0f766e);
   color: #ffffff;
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
+  transition: all 0.2s ease;
   user-select: none;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-#sheets-counter-floating-badge:hover {
-  transform: translateY(-2px);
-  background: #0d9488;
+#sheets-counter-widget-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* In-Page Quick Modal */
+#sheets-counter-modal {
+  position: fixed;
+  bottom: 80px;
+  right: 28px;
+  width: 320px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 99999999;
+  border: 1px solid #e2e8f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  animation: slideUp 0.2s ease;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scm-header {
+  background: #0f766e;
+  color: white;
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scm-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.scm-close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.scm-body {
+  padding: 14px;
 }

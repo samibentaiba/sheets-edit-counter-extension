@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sheets Edit Counter</title>
+  <title>Sheets Edit Counter - Maisonette Deco</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
@@ -14,42 +14,42 @@
         <div class="logo">📊</div>
         <div>
           <h1>Sheets Edit Counter</h1>
-          <p class="subtitle">Maisonette Deco &bull; Team Activity</p>
+          <p class="subtitle">تأكيد طلبيات maisonette deco</p>
         </div>
       </div>
       <span id="sheetStatus" class="status-badge checking">Checking Tab...</span>
     </header>
 
-    <!-- Preset Period Filters -->
+    <!-- Period & Collaborator Filters -->
     <section class="section">
       <div class="filter-group">
-        <label class="section-label">Quick Period / الفترة:</label>
+        <label class="section-label">الفترة (Time Period):</label>
         <div class="btn-group">
-          <button class="pill-btn active" data-period="today">Today</button>
-          <button class="pill-btn" data-period="week">7 Days</button>
-          <button class="pill-btn" data-period="month">This Month</button>
-          <button class="pill-btn" data-period="custom">Custom</button>
+          <button class="pill-btn active" data-period="today">اليوم (Today)</button>
+          <button class="pill-btn" data-period="week">أسبوع (7 Days)</button>
+          <button class="pill-btn" data-period="month">الشهر (Month)</button>
+          <button class="pill-btn" data-period="custom">مخصص (Range)</button>
         </div>
       </div>
 
-      <!-- Custom Date Range (collapsible or displayed when custom selected) -->
+      <!-- Custom Date Range Picker -->
       <div id="customDateContainer" class="date-range-row hidden">
         <div class="input-field">
-          <label for="startDate">From (من):</label>
+          <label for="startDate">من تاريخ (Start):</label>
           <input type="date" id="startDate">
         </div>
         <div class="input-field">
-          <label for="endDate">To (إلى):</label>
+          <label for="endDate">إلى تاريخ (End):</label>
           <input type="date" id="endDate">
         </div>
-        <button id="applyCustomDateBtn" class="apply-btn">Apply</button>
+        <button id="applyCustomDateBtn" class="apply-btn">تطبيق (Apply)</button>
       </div>
 
-      <!-- User Dropdown Filter -->
+      <!-- Collaborator Filter Dropdown -->
       <div class="user-select-row">
-        <label for="userFilter">Collaborator / المستخدم:</label>
+        <label for="userFilter">المستخدم (Collaborator):</label>
         <select id="userFilter">
-          <option value="ALL">All Collaborators (الكل)</option>
+          <option value="ALL">جميع الأعضاء (All Collaborators)</option>
         </select>
       </div>
     </section>
@@ -57,40 +57,72 @@
     <!-- KPI Summary Cards -->
     <section class="kpi-grid">
       <div class="kpi-card highlight">
-        <span class="kpi-title">Selected Edits</span>
+        <span class="kpi-title">تعديلات الفترة (Selected Edits)</span>
         <span id="kpiSelectedEdits" class="kpi-value">0</span>
       </div>
       <div class="kpi-card">
-        <span class="kpi-title">Active Users</span>
-        <span id="kpiActiveUsers" class="kpi-value">0</span>
+        <span class="kpi-title">الجلسات (Sessions)</span>
+        <span id="kpiSessions" class="kpi-value">0</span>
       </div>
       <div class="kpi-card">
-        <span class="kpi-title">All-Time Total</span>
+        <span class="kpi-title">المجموع الكلي (All-Time)</span>
         <span id="kpiTotalEdits" class="kpi-value">0</span>
       </div>
     </section>
 
-    <!-- Collaborators Breakdown Table -->
-    <section class="table-section">
+    <!-- Tabs: Collaborator Breakdown & Daily Breakdown -->
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="tabCollaborators">ملخص الأعضاء (By User)</button>
+      <button class="tab-btn" data-tab="tabDaily">يوم بيوم (Daily Breakdown)</button>
+    </div>
+
+    <!-- Tab 1: Collaborators Breakdown Table -->
+    <section id="tabCollaborators" class="table-section tab-content active">
       <div class="table-header-row">
-        <span class="section-label">User Breakdown / تفصيل الأعضاء</span>
+        <span class="section-label">تفصيل التعديلات لكل عضو</span>
         <span id="recordCount" class="record-count">0 users</span>
       </div>
       <div class="table-scroll">
         <table id="statsTable">
           <thead>
             <tr>
-              <th>Collaborator</th>
-              <th>Today</th>
-              <th>Week</th>
-              <th>Month</th>
-              <th id="thCustomRange">Range</th>
-              <th>Total</th>
+              <th>العضو (Collaborator)</th>
+              <th>اليوم</th>
+              <th>الأسبوع</th>
+              <th>الشهر</th>
+              <th id="thCustomRange">المخصص</th>
+              <th>المجموع</th>
             </tr>
           </thead>
           <tbody id="statsTableBody">
             <tr class="empty-row">
-              <td colspan="6">Click "Scan History" or load data to view counts.</td>
+              <td colspan="6">افتح Version history في الشيت ثم اضغط "Scan Sheet".</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Tab 2: Daily Breakdown Table (Day-by-Day) -->
+    <section id="tabDaily" class="table-section tab-content">
+      <div class="table-header-row">
+        <span class="section-label">التعديلات اليومية لكل عضو</span>
+        <span class="record-count" id="dailyDaysCount">0 days</span>
+      </div>
+      <div class="table-scroll">
+        <table id="dailyTable">
+          <thead>
+            <tr id="dailyTableHeaders">
+              <th>التاريخ (Date)</th>
+              <th>Raouf</th>
+              <th>Bouchra</th>
+              <th>Sami</th>
+              <th>المجموع</th>
+            </tr>
+          </thead>
+          <tbody id="dailyTableBody">
+            <tr class="empty-row">
+              <td colspan="5">لا توجد بيانات يومية بعد.</td>
             </tr>
           </tbody>
         </table>
@@ -99,14 +131,17 @@
 
     <!-- Bottom Actions -->
     <footer class="footer">
-      <button id="scanBtn" class="primary-btn">
-        <span>🔄</span> Scan Active Sheet
+      <button id="scanBtn" class="primary-btn" title="Scan Version History in Sheet">
+        <span>🔄</span> فحص الشيت (Scan Sheet)
+      </button>
+      <button id="deepScanBtn" class="accent-btn" title="Auto-click each version to extract exact cell edits">
+        <span>⚡</span> فحص دقيق (Deep Scan)
       </button>
       <button id="exportBtn" class="secondary-btn" title="Export as CSV">
-        <span>📥</span> Export CSV
+        <span>📥</span> CSV
       </button>
-      <button id="demoBtn" class="ghost-btn" title="Load sample data for testing">
-        🧪 Demo Data
+      <button id="demoBtn" class="ghost-btn" title="Load your team's real data from screenshots">
+        🧪 بيانات تجريبية
       </button>
     </footer>
   </div>

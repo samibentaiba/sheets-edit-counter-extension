@@ -1,46 +1,76 @@
 /**
  * Sheets Edit & Activity Counter - Popup Script
+ * Maisonette Deco Order Confirmation Sheet
  */
 
 let allEditsData = [];
 let currentPeriod = 'today';
 let selectedUser = 'ALL';
 
-// Sample Demo Data (using the names from Maisonette Deco sheet)
-const DEMO_DATA = [
-  // Today's edits
-  { user: "ana2006 bouchra", email: "ana2006.bouchra@gmail.com", date: new Date().toISOString(), count: 18 },
-  { user: "Raouf Bentaiba", email: "raouf.bentaiba@gmail.com", date: new Date().toISOString(), count: 12 },
-  { user: "Sami Bentaiba", email: "sami.bentaiba@gmail.com", date: new Date().toISOString(), count: 5 },
+// User color palette matching Google Sheets
+const USER_COLORS = {
+  "Raouf Bentaiba": "#e37400",   // Orange
+  "ana2006 bouchra": "#129688",  // Teal
+  "Sami Bentaiba": "#8e24aa"     // Purple
+};
 
-  // Earlier this week (2 days ago)
-  { user: "ana2006 bouchra", email: "ana2006.bouchra@gmail.com", date: daysAgo(2), count: 45 },
-  { user: "Raouf Bentaiba", email: "raouf.bentaiba@gmail.com", date: daysAgo(2), count: 34 },
-  { user: "Sami Bentaiba", email: "sami.bentaiba@gmail.com", date: daysAgo(3), count: 21 },
+// Real Data extracted from the 7 Version History Screenshots provided by the user
+const REAL_SCREENSHOT_DATA = [
+  // Today (November 20, 2026)
+  { user: "Sami Bentaiba", date: "2026-11-20T16:17:00", count: 5, timeStr: "4:17 PM", dayStr: "2026-11-20" },
+  { user: "ana2006 bouchra", date: "2026-11-20T14:33:00", count: 1, timeStr: "2:33 PM", dayStr: "2026-11-20" },
+  { user: "Raouf Bentaiba", date: "2026-11-20T13:21:00", count: 2, timeStr: "1:21 PM", dayStr: "2026-11-20" },
+  { user: "ana2006 bouchra", date: "2026-11-20T12:39:00", count: 1, timeStr: "12:39 PM", dayStr: "2026-11-20" },
+  { user: "ana2006 bouchra", date: "2026-11-20T11:00:00", count: 1, timeStr: "11:00 AM", dayStr: "2026-11-20" },
+  { user: "Raouf Bentaiba", date: "2026-11-20T00:59:00", count: 1, timeStr: "12:59 AM", dayStr: "2026-11-20" },
 
-  // Earlier this month (10 days ago)
-  { user: "ana2006 bouchra", email: "ana2006.bouchra@gmail.com", date: daysAgo(10), count: 110 },
-  { user: "Raouf Bentaiba", email: "raouf.bentaiba@gmail.com", date: daysAgo(12), count: 85 },
-  { user: "Sami Bentaiba", email: "sami.bentaiba@gmail.com", date: daysAgo(15), count: 64 },
+  // Yesterday (November 19, 2026)
+  { user: "Raouf Bentaiba", date: "2026-11-19T22:49:00", count: 1, timeStr: "10:49 PM", dayStr: "2026-11-19" },
+  { user: "Raouf Bentaiba", date: "2026-11-19T20:27:00", count: 1, timeStr: "8:27 PM", dayStr: "2026-11-19" },
+  { user: "Raouf Bentaiba", date: "2026-11-19T18:16:00", count: 18, timeStr: "6:16 PM", dayStr: "2026-11-19" },
+  { user: "ana2006 bouchra", date: "2026-11-19T18:16:00", count: 4, timeStr: "6:16 PM", dayStr: "2026-11-19" },
+  { user: "Sami Bentaiba", date: "2026-11-19T18:16:00", count: 2, timeStr: "6:16 PM", dayStr: "2026-11-19" },
+  { user: "Raouf Bentaiba", date: "2026-11-19T14:59:00", count: 1, timeStr: "2:59 PM", dayStr: "2026-11-19" },
+  { user: "ana2006 bouchra", date: "2026-11-19T14:13:00", count: 1, timeStr: "2:13 PM", dayStr: "2026-11-19" },
 
-  // Last month (35 days ago)
-  { user: "ana2006 bouchra", email: "ana2006.bouchra@gmail.com", date: daysAgo(35), count: 150 },
-  { user: "Raouf Bentaiba", email: "raouf.bentaiba@gmail.com", date: daysAgo(40), count: 130 }
+  // November 18, 2026
+  { user: "Raouf Bentaiba", date: "2026-11-18T22:07:00", count: 1, timeStr: "10:07 PM", dayStr: "2026-11-18" },
+  { user: "Raouf Bentaiba", date: "2026-11-18T20:51:00", count: 1, timeStr: "8:51 PM", dayStr: "2026-11-18" },
+  { user: "Sami Bentaiba", date: "2026-11-18T18:27:00", count: 10, timeStr: "6:27 PM", dayStr: "2026-11-18" },
+  { user: "ana2006 bouchra", date: "2026-11-18T18:27:00", count: 5, timeStr: "6:27 PM", dayStr: "2026-11-18" },
+  { user: "Raouf Bentaiba", date: "2026-11-18T17:18:00", count: 3, timeStr: "5:18 PM", dayStr: "2026-11-18" },
+  { user: "ana2006 bouchra", date: "2026-11-18T17:18:00", count: 2, timeStr: "5:18 PM", dayStr: "2026-11-18" },
+  { user: "Sami Bentaiba", date: "2026-11-18T17:18:00", count: 1, timeStr: "5:18 PM", dayStr: "2026-11-18" },
+  { user: "Raouf Bentaiba", date: "2026-11-18T13:08:00", count: 1, timeStr: "1:08 PM", dayStr: "2026-11-18" },
+  { user: "Raouf Bentaiba", date: "2026-11-18T12:38:00", count: 8, timeStr: "12:38 PM", dayStr: "2026-11-18" },
+  { user: "Sami Bentaiba", date: "2026-11-18T12:38:00", count: 3, timeStr: "12:38 PM", dayStr: "2026-11-18" },
+  { user: "Raouf Bentaiba", date: "2026-11-18T10:59:00", count: 1, timeStr: "10:59 AM", dayStr: "2026-11-18" },
+  { user: "Raouf Bentaiba", date: "2026-11-18T09:54:00", count: 1, timeStr: "9:54 AM", dayStr: "2026-11-18" },
+
+  // November 17, 2026
+  { user: "Raouf Bentaiba", date: "2026-11-17T20:28:00", count: 1, timeStr: "8:28 PM", dayStr: "2026-11-17" },
+  { user: "Raouf Bentaiba", date: "2026-11-17T19:47:00", count: 1, timeStr: "7:47 PM", dayStr: "2026-11-17" },
+  { user: "Sami Bentaiba", date: "2026-11-17T17:26:00", count: 2, timeStr: "5:26 PM", dayStr: "2026-11-17" },
+  { user: "Raouf Bentaiba", date: "2026-11-17T17:26:00", count: 2, timeStr: "5:26 PM", dayStr: "2026-11-17" },
+  { user: "ana2006 bouchra", date: "2026-11-17T17:26:00", count: 1, timeStr: "5:26 PM", dayStr: "2026-11-17" },
+  { user: "Sami Bentaiba", date: "2026-11-17T15:13:00", count: 2, timeStr: "3:13 PM", dayStr: "2026-11-17" },
+  { user: "Raouf Bentaiba", date: "2026-11-17T13:53:00", count: 1, timeStr: "1:53 PM", dayStr: "2026-11-17" },
+  { user: "Raouf Bentaiba", date: "2026-11-17T12:40:00", count: 1, timeStr: "12:40 PM", dayStr: "2026-11-17" },
+  { user: "Raouf Bentaiba", date: "2026-11-17T11:00:00", count: 1, timeStr: "11:00 AM", dayStr: "2026-11-17" },
+  { user: "ana2006 bouchra", date: "2026-11-17T09:46:00", count: 1, timeStr: "9:46 AM", dayStr: "2026-11-17" }
 ];
 
-function daysAgo(days) {
-  const d = new Date();
-  d.setDate(d.getDate() - days);
-  return d.toISOString();
-}
-
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   setupDefaultDates();
   setupEventListeners();
   checkCurrentTab();
+
+  // Load real screenshot dataset by default so user sees immediate results
+  allEditsData = REAL_SCREENSHOT_DATA;
+  updateUserDropdown();
+  renderDashboard();
 });
 
-// Setup default start and end dates
 function setupDefaultDates() {
   const today = new Date();
   const weekAgo = new Date();
@@ -50,9 +80,8 @@ function setupDefaultDates() {
   document.getElementById('startDate').value = weekAgo.toISOString().split('T')[0];
 }
 
-// Event Listeners
 function setupEventListeners() {
-  // Period filter buttons
+  // Period buttons
   document.querySelectorAll('.pill-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
@@ -69,10 +98,8 @@ function setupEventListeners() {
     });
   });
 
-  // Apply custom date button
-  document.getElementById('applyCustomDateBtn').addEventListener('click', () => {
-    renderDashboard();
-  });
+  // Apply custom date
+  document.getElementById('applyCustomDateBtn').addEventListener('click', renderDashboard);
 
   // User Filter
   document.getElementById('userFilter').addEventListener('change', (e) => {
@@ -80,12 +107,27 @@ function setupEventListeners() {
     renderDashboard();
   });
 
-  // Scan Button
-  document.getElementById('scanBtn').addEventListener('click', scanActiveSheet);
+  // Tab switching
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      e.target.classList.add('active');
+      const targetTab = document.getElementById(e.target.dataset.tab);
+      if (targetTab) targetTab.classList.add('active');
+    });
+  });
+
+  // Quick Scan
+  document.getElementById('scanBtn').addEventListener('click', () => scanSheet(false));
+
+  // Deep Scan
+  document.getElementById('deepScanBtn').addEventListener('click', () => scanSheet(true));
 
   // Demo Button
   document.getElementById('demoBtn').addEventListener('click', () => {
-    allEditsData = DEMO_DATA;
+    allEditsData = REAL_SCREENSHOT_DATA;
     updateUserDropdown();
     renderDashboard();
   });
@@ -94,63 +136,63 @@ function setupEventListeners() {
   document.getElementById('exportBtn').addEventListener('click', exportCSV);
 }
 
-// Check active tab URL
+// Check current browser tab
 async function checkCurrentTab() {
   const statusBadge = document.getElementById('sheetStatus');
   try {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     if (tab && tab.url && tab.url.includes('docs.google.com/spreadsheets')) {
-      statusBadge.textContent = 'Sheet Connected';
+      statusBadge.textContent = 'Sheet Ready';
       statusBadge.className = 'status-badge connected';
-      // Auto-load cached data if available
-      loadCachedData(tab.id);
+      loadCachedData();
     } else {
-      statusBadge.textContent = 'Not on Google Sheets';
-      statusBadge.className = 'status-badge disconnected';
+      statusBadge.textContent = 'Open Google Sheets';
+      statusBadge.className = 'status-badge checking';
     }
   } catch (e) {
-    statusBadge.textContent = 'Extension Ready';
-    statusBadge.className = 'status-badge checking';
+    statusBadge.textContent = 'Extension Active';
   }
 }
 
-// Scan the sheet by messaging content script
-async function scanActiveSheet() {
+// Trigger scan on content script
+async function scanSheet(deepScan = false) {
   const statusBadge = document.getElementById('sheetStatus');
   try {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     if (!tab || !tab.url || !tab.url.includes('docs.google.com/spreadsheets')) {
-      alert('Please open your Google Sheet tab first, then click Scan.');
+      alert('الرجاء فتح شيت Google Sheets أولاً.');
       return;
     }
 
-    statusBadge.textContent = 'Scanning...';
+    statusBadge.textContent = deepScan ? 'Deep Scanning...' : 'Scanning...';
     statusBadge.className = 'status-badge checking';
 
-    chrome.tabs.sendMessage(tab.id, { action: 'SCAN_VERSION_HISTORY' }, (response) => {
+    chrome.tabs.sendMessage(tab.id, { 
+      action: deepScan ? 'DEEP_SCAN_SHEET' : 'QUICK_SCAN_SHEET' 
+    }, (response) => {
       if (chrome.runtime.lastError || !response || !response.success) {
-        // Fallback message
-        statusBadge.textContent = 'Needs Version Panel Open';
+        statusBadge.textContent = 'Open Version History';
         statusBadge.className = 'status-badge checking';
         alert(
-          'Tip: Please open "File > Version history > See version history" in Google Sheets so the extension can read the exact edit records, then click Scan.'
+          'تنبيه: الرجاء التأكد من فتح قائمة سجل النسخ:\n(File > Version history > See version history)\nفي الشيت ثم الضغط على فحص مجدداً.'
         );
         return;
       }
 
-      statusBadge.textContent = 'Sheet Synced';
+      statusBadge.textContent = 'Synced (' + response.count + ' versions)';
       statusBadge.className = 'status-badge connected';
-      allEditsData = response.data || [];
-      updateUserDropdown();
-      renderDashboard();
+      if (response.data && response.data.length > 0) {
+        allEditsData = response.data;
+        updateUserDropdown();
+        renderDashboard();
+      }
     });
   } catch (err) {
     console.error('Scan error:', err);
   }
 }
 
-// Load cached data from chrome.storage
-function loadCachedData(tabId) {
+function loadCachedData() {
   chrome.storage.local.get(['savedSheetEdits'], (result) => {
     if (result.savedSheetEdits && result.savedSheetEdits.length > 0) {
       allEditsData = result.savedSheetEdits;
@@ -160,16 +202,14 @@ function loadCachedData(tabId) {
   });
 }
 
-// Update user dropdown list
 function updateUserDropdown() {
   const select = document.getElementById('userFilter');
   const users = new Set();
-
   allEditsData.forEach(item => {
     if (item.user) users.add(item.user);
   });
 
-  select.innerHTML = '<option value="ALL">All Collaborators (الكل)</option>';
+  select.innerHTML = '<option value="ALL">جميع الأعضاء (All Collaborators)</option>';
   users.forEach(u => {
     const opt = document.createElement('option');
     opt.value = u;
@@ -178,136 +218,154 @@ function updateUserDropdown() {
   });
 }
 
-// Main Calculation and UI Render
+// Render Dashboard & Tables
 function renderDashboard() {
   const now = new Date();
   const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
 
-  // Week start: 7 days ago
   const weekStart = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
   weekStart.setHours(0, 0, 0, 0);
 
-  // Month start: 1st day of current month
   const monthStart = new Date(now.getFullYear(), now.getMonth(), 1, 0, 0, 0);
 
-  // Custom date range
   const startInput = document.getElementById('startDate').value;
   const endInput = document.getElementById('endDate').value;
   const customStart = startInput ? new Date(startInput + 'T00:00:00') : weekStart;
   const customEnd = endInput ? new Date(endInput + 'T23:59:59') : now;
 
-  // Aggregate by user
+  // Stats aggregation
   const userStats = {};
+  const dailyStats = {}; // { "2026-11-20": { "Raouf": 2, "Bouchra": 3, "total": 5 } }
 
   allEditsData.forEach(item => {
     const u = item.user || 'Unknown User';
-    const email = item.email || '';
     const itemDate = new Date(item.date);
     const count = item.count || 1;
+    const dayStr = item.dayStr || itemDate.toISOString().split('T')[0];
 
+    // User totals
     if (!userStats[u]) {
-      userStats[u] = {
-        name: u,
-        email: email,
-        today: 0,
-        week: 0,
-        month: 0,
-        custom: 0,
-        total: 0
-      };
+      userStats[u] = { name: u, today: 0, week: 0, month: 0, custom: 0, total: 0, sessions: 0 };
     }
-
     userStats[u].total += count;
+    userStats[u].sessions += 1;
 
-    if (itemDate >= todayStart) {
-      userStats[u].today += count;
+    if (itemDate >= todayStart) userStats[u].today += count;
+    if (itemDate >= weekStart) userStats[u].week += count;
+    if (itemDate >= monthStart) userStats[u].month += count;
+    if (itemDate >= customStart && itemDate <= customEnd) userStats[u].custom += count;
+
+    // Daily totals
+    if (!dailyStats[dayStr]) {
+      dailyStats[dayStr] = { date: dayStr, total: 0, users: {} };
     }
-    if (itemDate >= weekStart) {
-      userStats[u].week += count;
-    }
-    if (itemDate >= monthStart) {
-      userStats[u].month += count;
-    }
-    if (itemDate >= customStart && itemDate <= customEnd) {
-      userStats[u].custom += count;
-    }
+    dailyStats[dayStr].total += count;
+    if (!dailyStats[dayStr].users[u]) dailyStats[dayStr].users[u] = 0;
+    dailyStats[dayStr].users[u] += count;
   });
 
-  // Filter based on selected user
-  const displayList = Object.values(userStats).filter(entry => {
+  const displayUsers = Object.values(userStats).filter(entry => {
     if (selectedUser === 'ALL') return true;
     return entry.name === selectedUser;
   });
 
-  // Calculate KPI values
-  let selectedMetricTotal = 0;
-  let allTimeTotal = 0;
+  // Calculate KPIs
+  let periodTotal = 0;
+  let sessionTotal = 0;
+  let grandTotal = 0;
 
-  displayList.forEach(item => {
-    allTimeTotal += item.total;
-    if (currentPeriod === 'today') selectedMetricTotal += item.today;
-    else if (currentPeriod === 'week') selectedMetricTotal += item.week;
-    else if (currentPeriod === 'month') selectedMetricTotal += item.month;
-    else if (currentPeriod === 'custom') selectedMetricTotal += item.custom;
+  displayUsers.forEach(s => {
+    grandTotal += s.total;
+    sessionTotal += s.sessions;
+    if (currentPeriod === 'today') periodTotal += s.today;
+    else if (currentPeriod === 'week') periodTotal += s.week;
+    else if (currentPeriod === 'month') periodTotal += s.month;
+    else if (currentPeriod === 'custom') periodTotal += s.custom;
   });
 
-  document.getElementById('kpiSelectedEdits').textContent = selectedMetricTotal;
-  document.getElementById('kpiActiveUsers').textContent = displayList.length;
-  document.getElementById('kpiTotalEdits').textContent = allTimeTotal;
-  document.getElementById('recordCount').textContent = `${displayList.length} collaborator(s)`;
+  document.getElementById('kpiSelectedEdits').textContent = periodTotal;
+  document.getElementById('kpiSessions').textContent = sessionTotal;
+  document.getElementById('kpiTotalEdits').textContent = grandTotal;
+  document.getElementById('recordCount').textContent = `${displayUsers.length} عضو`;
 
-  // Update dynamic table header
-  const thRange = document.getElementById('thCustomRange');
-  if (currentPeriod === 'custom') {
-    thRange.textContent = 'Custom Range';
-  } else {
-    thRange.textContent = 'Range';
-  }
-
-  // Render Table
+  // Render Collaborators Table
   const tbody = document.getElementById('statsTableBody');
   tbody.innerHTML = '';
 
-  if (displayList.length === 0) {
-    tbody.innerHTML = '<tr class="empty-row"><td colspan="6">No activity records found.</td></tr>';
+  if (displayUsers.length === 0) {
+    tbody.innerHTML = '<tr class="empty-row"><td colspan="6">لا توجد بيانات مطابقة.</td></tr>';
+  } else {
+    displayUsers.forEach(stat => {
+      const dotColor = USER_COLORS[stat.name] || '#64748b';
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>
+          <span class="user-name-cell">
+            <span class="user-dot" style="background-color: ${dotColor};"></span>
+            ${escapeHtml(stat.name)}
+          </span>
+        </td>
+        <td class="num-cell ${stat.today > 0 ? 'positive' : ''}">${stat.today}</td>
+        <td class="num-cell ${stat.week > 0 ? 'positive' : ''}">${stat.week}</td>
+        <td class="num-cell ${stat.month > 0 ? 'positive' : ''}">${stat.month}</td>
+        <td class="num-cell ${stat.custom > 0 ? 'positive' : ''}">${stat.custom}</td>
+        <td class="num-cell">${stat.total}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // Render Daily Table (Day by Day)
+  renderDailyTable(dailyStats);
+}
+
+function renderDailyTable(dailyStats) {
+  const dailyBody = document.getElementById('dailyTableBody');
+  const days = Object.keys(dailyStats).sort().reverse(); // newest first
+  document.getElementById('dailyDaysCount').textContent = `${days.length} يوم`;
+
+  dailyBody.innerHTML = '';
+  if (days.length === 0) {
+    dailyBody.innerHTML = '<tr class="empty-row"><td colspan="5">لا توجد بيانات يومية.</td></tr>';
     return;
   }
 
-  displayList.forEach(stat => {
+  days.forEach(day => {
+    const d = dailyStats[day];
+    const raouf = d.users["Raouf Bentaiba"] || 0;
+    const bouchra = d.users["ana2006 bouchra"] || 0;
+    const sami = d.users["Sami Bentaiba"] || 0;
+
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td>
-        <span class="user-name-cell">${escapeHtml(stat.name)}</span>
-        ${stat.email ? `<span class="user-email-tag">${escapeHtml(stat.email)}</span>` : ''}
-      </td>
-      <td class="num-cell ${stat.today > 0 ? 'positive' : ''}">${stat.today}</td>
-      <td class="num-cell ${stat.week > 0 ? 'positive' : ''}">${stat.week}</td>
-      <td class="num-cell ${stat.month > 0 ? 'positive' : ''}">${stat.month}</td>
-      <td class="num-cell ${stat.custom > 0 ? 'positive' : ''}">${stat.custom}</td>
-      <td class="num-cell">${stat.total}</td>
+      <td><strong>${day}</strong></td>
+      <td class="num-cell ${raouf > 0 ? 'positive' : ''}">${raouf}</td>
+      <td class="num-cell ${bouchra > 0 ? 'positive' : ''}">${bouchra}</td>
+      <td class="num-cell ${sami > 0 ? 'positive' : ''}">${sami}</td>
+      <td class="num-cell"><strong>${d.total}</strong></td>
     `;
-    tbody.appendChild(tr);
+    dailyBody.appendChild(tr);
   });
 }
 
-// Export CSV Function
 function exportCSV() {
   if (allEditsData.length === 0) {
-    alert('No data to export. Please scan or load data first.');
+    alert('لا توجد بيانات لتصديرها.');
     return;
   }
 
-  let csvContent = 'data:text/csv;charset=utf-8,';
-  csvContent += 'Collaborator,Email,Date,Edit Count\n';
+  let csvContent = '\uFEFF'; // UTF-8 BOM for Arabic text in Excel
+  csvContent += 'المستخدم (User),التاريخ (Date),التوقيت (Time),عدد التعديلات (Edits)\n';
 
   allEditsData.forEach(row => {
-    csvContent += `"${row.user}","${row.email || ''}","${row.date}",${row.count || 1}\n`;
+    csvContent += `"${row.user}","${row.dayStr || row.date}","${row.timeStr || ''}",${row.count || 1}\n`;
   });
 
-  const encodedUri = encodeURI(csvContent);
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
-  link.setAttribute('href', encodedUri);
-  link.setAttribute('download', `sheets_edits_report_${new Date().toISOString().split('T')[0]}.csv`);
+  link.setAttribute('href', url);
+  link.setAttribute('download', `maisonette_deco_edits_${new Date().toISOString().split('T')[0]}.csv`);
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

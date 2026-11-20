@@ -6,8 +6,8 @@
 }
 
 body {
-  width: 480px;
-  max-height: 600px;
+  width: 520px;
+  max-height: 620px;
   background-color: #f8fafc;
   color: #1e293b;
   overflow-y: auto;
@@ -17,7 +17,7 @@ body {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 /* Header */
@@ -26,7 +26,7 @@ body {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 12px;
+  padding-bottom: 10px;
 }
 
 .header-title {
@@ -43,14 +43,15 @@ body {
 }
 
 h1 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: #0f172a;
 }
 
 .subtitle {
   font-size: 11px;
-  color: #64748b;
+  color: #0d9488;
+  font-weight: 600;
 }
 
 .status-badge {
@@ -87,7 +88,7 @@ h1 {
 }
 
 .section-label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   color: #475569;
 }
@@ -112,7 +113,7 @@ h1 {
   font-size: 11px;
   font-weight: 600;
   color: #64748b;
-  padding: 5px 10px;
+  padding: 5px 9px;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -124,7 +125,7 @@ h1 {
 
 .pill-btn.active {
   background: #ffffff;
-  color: #0f766e;
+  color: #0d9488;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -159,7 +160,7 @@ h1 {
   padding: 6px 8px;
   border: 1px solid #cbd5e1;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 11px;
   color: #1e293b;
   background: #ffffff;
   outline: none;
@@ -175,7 +176,7 @@ h1 {
   color: white;
   border: none;
   border-radius: 6px;
-  padding: 7px 12px;
+  padding: 6px 12px;
   font-size: 11px;
   font-weight: 600;
   cursor: pointer;
@@ -208,11 +209,11 @@ h1 {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
-  padding: 10px;
+  padding: 8px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .kpi-card.highlight {
@@ -225,15 +226,47 @@ h1 {
 }
 
 .kpi-title {
-  font-size: 11px;
+  font-size: 10px;
   color: #64748b;
   font-weight: 500;
 }
 
 .kpi-value {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #0f172a;
+}
+
+/* Tabs */
+.tab-nav {
+  display: flex;
+  border-bottom: 2px solid #e2e8f0;
+  gap: 8px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tab-btn.active {
+  color: #0d9488;
+  border-bottom-color: #0d9488;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: flex;
 }
 
 /* Table Section */
@@ -241,7 +274,7 @@ h1 {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
-  padding: 12px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -259,7 +292,7 @@ h1 {
 }
 
 .table-scroll {
-  max-height: 200px;
+  max-height: 180px;
   overflow-y: auto;
   border: 1px solid #f1f5f9;
   border-radius: 6px;
@@ -275,12 +308,16 @@ th {
   background: #f8fafc;
   color: #475569;
   font-weight: 600;
-  padding: 8px 6px;
-  text-align: left;
+  padding: 7px 6px;
+  text-align: center;
   border-bottom: 1px solid #e2e8f0;
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+th:first-child {
+  text-align: left;
 }
 
 td {
@@ -296,12 +333,16 @@ tr:hover td {
 .user-name-cell {
   font-weight: 600;
   color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.user-email-tag {
-  font-size: 9px;
-  color: #64748b;
-  display: block;
+.user-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .num-cell {
@@ -323,7 +364,7 @@ tr:hover td {
 /* Footer / Actions */
 .footer {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .primary-btn {
@@ -331,20 +372,39 @@ tr:hover td {
   background: #16a34a;
   color: white;
   border: none;
-  padding: 9px 14px;
+  padding: 8px 12px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  transition: background 0.15s;
+  gap: 4px;
 }
 
 .primary-btn:hover {
   background: #15803d;
+}
+
+.accent-btn {
+  flex: 2;
+  background: #0284c7;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.accent-btn:hover {
+  background: #0369a1;
 }
 
 .secondary-btn {
@@ -352,15 +412,15 @@ tr:hover td {
   background: #ffffff;
   color: #334155;
   border: 1px solid #cbd5e1;
-  padding: 9px 12px;
+  padding: 8px 10px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .secondary-btn:hover {
@@ -371,9 +431,9 @@ tr:hover td {
   background: transparent;
   color: #64748b;
   border: 1px dashed #cbd5e1;
-  padding: 9px 10px;
+  padding: 8px 8px;
   border-radius: 8px;
-  font-size: 11px;
+  font-size: 10px;
   cursor: pointer;
 }
 
