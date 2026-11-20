@@ -1,213 +1,203 @@
 /**
  * Sheets Edit & Activity Counter - Content Script
- * Injected into Google Sheets
+ * Tailored for Google Sheets Version History (Maisonette Deco)
  */
 
-console.log("[Sheets Edit Counter] Content Script active.");
+console.log("[Sheets Edit Counter] Content Script loaded.");
 
-// Message Listener from Popup
+// Listen for messages from extension popup
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "QUICK_SCAN_SHEET") {
-    const data = parseSidebarVersions();
-    if (data.length > 0) {
-      chrome.storage.local.set({ savedSheetEdits: data });
-      sendResponse({ success: true, count: data.length, data: data });
-    } else {
-      sendResponse({ success: false, message: "No version items found." });
+    try {
+      const data = extractRevisionsFromDOM();
+      if (data.length > 0) {
+        chrome.storage.local.set({ savedSheetEdits: data });
+        sendResponse({ success: true, count: data.length, data: data });
+      } else {
+        sendResponse({ success: false, message: "No version tiles found in DOM." });
+      }
+    } catch (e) {
+      sendResponse({ success: false, message: e.toString() });
     }
     return true;
   }
 
   if (request.action === "DEEP_SCAN_SHEET") {
-    deepScanVersions().then(data => {
+    deepScanTiles().then(data => {
       chrome.storage.local.set({ savedSheetEdits: data });
       sendResponse({ success: true, count: data.length, data: data });
     }).catch(err => {
       sendResponse({ success: false, message: err.toString() });
     });
-    return true; // async response
+    return true;
   }
 });
 
 /**
- * Parses the Version History sidebar items from Google Sheets DOM
+ * Extracts revision entries using the exact Google Sheets DOM classes
  */
-function parseSidebarVersions() {
-  const versions = [];
-  const sidebar = findVersionHistorySidebar();
-  if (!sidebar) {
-    console.warn("[Sheets Edit Counter] Version history sidebar not visible.");
-    return versions;
-  }
+function extractRevisionsFromDOM() {
+  const results = [];
 
-  // Find all date sections and version tiles
-  let currentDateStr = getTodayISO();
+  // Exact Google Sheets selector: textarea containing version date & time
+  const versionInputs = document.querySelectorAll('textarea[aria-label="Name this version"]');
+  
+  if (versionInputs.length > 0) {
+    versionInputs.forEach(input => {
+      const rawDate = (input.value || input.textContent || "").replace(/\u202f|\xa0/g, ' ').trim();
+      const parsedDate = parseDateString(rawDate);
 
-  // Walk through the sidebar's children
-  const allElements = sidebar.querySelectorAll('*');
-  allElements.forEach(el => {
-    const text = el.textContent ? el.textContent.trim() : '';
+      // Find the parent tile container
+      let tile = input.closest('[role="listitem"], [role="option"]') || 
+                 input.parentElement.parentElement.parentElement;
 
-    // Check if this element is a date header
-    if (isDateHeader(text)) {
-      currentDateStr = normalizeDateHeader(text);
-    }
+      // Find all authors in this tile
+      const authorBlocks = tile.querySelectorAll('.appsDocsRevisionsWizSidebarAuthorInfo');
+      
+      if (authorBlocks.length > 0) {
+        authorBlocks.forEach(ab => {
+          const nameEl = ab.querySelector('.appsDocsRevisionsWizSidebarBodySmallOnSurfaceVariant') || ab;
+          const name = nameEl.textContent.trim();
+          const swatch = ab.querySelector('.appsDocsRevisionsWizSidebarTileSwatch');
+          const color = swatch ? swatch.style.backgroundColor : '';
 
-    // Check if this element contains a version timestamp (e.g. "4:17 PM", "2:33 PM", "12:38 PM")
-    const timeMatch = text.match(/\b(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm))\b/);
-    if (timeMatch && el.children.length <= 4) {
-      const timeStr = timeMatch[1];
-      const parentTile = el.closest('[role="listitem"], [role="option"], .docs-revisions-tile') || el.parentElement;
-
-      // Extract collaborator names in this tile
-      const users = extractCollaboratorsFromElement(parentTile || el);
-
-      users.forEach(user => {
-        // Avoid duplicate entries for same user and timestamp
-        const exists = versions.some(v => v.user === user && v.timeStr === timeStr && v.dayStr === currentDateStr);
-        if (!exists) {
-          versions.push({
-            user: user,
-            timeStr: timeStr,
-            dayStr: currentDateStr,
-            date: `${currentDateStr}T${convertTo24h(timeStr)}`,
+          if (name) {
+            results.push({
+              user: name,
+              color: color,
+              date: parsedDate.iso,
+              dayStr: parsedDate.day,
+              timeStr: parsedDate.time,
+              rawDate: rawDate,
+              count: 1
+            });
+          }
+        });
+      } else {
+        // Fallback for single user without .appsDocsRevisionsWizSidebarAuthorInfo
+        const singleNameEl = tile.querySelector('.appsDocsRevisionsWizSidebarBodySmallOnSurfaceVariant');
+        if (singleNameEl) {
+          const name = singleNameEl.textContent.trim();
+          results.push({
+            user: name,
+            date: parsedDate.iso,
+            dayStr: parsedDate.day,
+            timeStr: parsedDate.time,
+            rawDate: rawDate,
             count: 1
           });
         }
-      });
-    }
-  });
+      }
+    });
 
-  return versions;
+    return results;
+  }
+
+  return results;
 }
 
 /**
  * Deep Scan: Sequentially clicks visible version tiles to extract exact "Total: X edits"
  */
-async function deepScanVersions() {
-  const sidebar = findVersionHistorySidebar();
-  if (!sidebar) throw new Error("Sidebar not open");
+async function deepScanTiles() {
+  const versionInputs = document.querySelectorAll('textarea[aria-label="Name this version"]');
+  if (versionInputs.length === 0) throw new Error("Please open File > Version history first.");
 
-  const tiles = sidebar.querySelectorAll('[role="listitem"], [role="option"], .docs-revisions-tile');
   const results = [];
+  const maxToScan = Math.min(versionInputs.length, 30); // scan up to 30 recent versions smoothly
 
-  for (let i = 0; i < tiles.length; i++) {
-    const tile = tiles[i];
-    tile.click();
-    await wait(250); // wait for top bar to update
+  for (let i = 0; i < maxToScan; i++) {
+    const input = versionInputs[i];
+    const tile = input.closest('[role="listitem"], [role="option"]') || input.parentElement;
+    if (tile) {
+      tile.click();
+      await new Promise(r => setTimeout(r, 200));
 
-    const editsCount = readTopBarEditsCount();
-    const users = extractCollaboratorsFromElement(tile);
-    const timeMatch = tile.textContent.match(/\b(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm))\b/);
-    const timeStr = timeMatch ? timeMatch[1] : "";
-    const dateStr = getTodayISO(); // or header
+      const editsCount = readTopBarCount();
+      const rawDate = (input.value || input.textContent || "").replace(/\u202f|\xa0/g, ' ').trim();
+      const parsedDate = parseDateString(rawDate);
 
-    users.forEach((u, idx) => {
-      // Divide edits among collaborators in multi-user version or attribute appropriately
-      const allocatedCount = users.length > 1 ? Math.max(1, Math.round(editsCount / users.length)) : editsCount;
-      results.push({
-        user: u,
-        count: allocatedCount,
-        timeStr: timeStr,
-        dayStr: dateStr,
-        date: `${dateStr}T${convertTo24h(timeStr)}`
+      const authorBlocks = tile.querySelectorAll('.appsDocsRevisionsWizSidebarAuthorInfo');
+      const authors = [];
+      authorBlocks.forEach(ab => {
+        const nameEl = ab.querySelector('.appsDocsRevisionsWizSidebarBodySmallOnSurfaceVariant') || ab;
+        if (nameEl && nameEl.textContent.trim()) authors.push(nameEl.textContent.trim());
       });
-    });
+
+      if (authors.length === 0) {
+        const single = tile.querySelector('.appsDocsRevisionsWizSidebarBodySmallOnSurfaceVariant');
+        if (single) authors.push(single.textContent.trim());
+      }
+
+      authors.forEach(u => {
+        const count = authors.length > 1 ? Math.max(1, Math.round(editsCount / authors.length)) : editsCount;
+        results.push({
+          user: u,
+          count: count,
+          date: parsedDate.iso,
+          dayStr: parsedDate.day,
+          timeStr: parsedDate.time,
+          rawDate: rawDate
+        });
+      });
+    }
   }
 
-  return results.length > 0 ? results : parseSidebarVersions();
+  return results.length > 0 ? results : extractRevisionsFromDOM();
 }
 
 /**
- * Reads "Total: X edits" from the top bar
+ * Reads "Total: X edits" from the top bar indicator
  */
-function readTopBarEditsCount() {
-  const allTextElements = document.querySelectorAll('div, span, b');
-  for (const el of allTextElements) {
-    if (el.children.length === 0 && el.textContent) {
-      const match = el.textContent.match(/Total:\s*(\d+)\s*edit/i);
-      if (match) return parseInt(match[1], 10);
-      const matchFr = el.textContent.match(/(\d+)\s*modification/i);
-      if (matchFr) return parseInt(matchFr[1], 10);
-      const matchAr = el.textContent.match(/(\d+)\s*تعديل/i);
-      if (matchAr) return parseInt(matchAr[1], 10);
-    }
+function readTopBarCount() {
+  const indicator = document.getElementById('docs-toolbar-iterator-label');
+  if (indicator && indicator.textContent) {
+    const m = indicator.textContent.match(/Total:\s*(\d+)\s*edit/i);
+    if (m) return parseInt(m[1], 10);
   }
+
+  // Fallback scan
+  const allSpans = document.querySelectorAll('.docs-labelseparator, [role="heading"]');
+  for (const s of allSpans) {
+    const m = s.textContent.match(/Total:\s*(\d+)\s*edit/i);
+    if (m) return parseInt(m[1], 10);
+  }
+
   return 1;
 }
 
-function findVersionHistorySidebar() {
-  return document.querySelector(
-    '.docs-revisions-sidebar, [aria-label*="Version history"], [aria-label*="سجل النسخ"], [role="region"][aria-label*="history"]'
-  ) || Array.from(document.querySelectorAll('div')).find(d => 
-    d.textContent && (d.textContent.includes('Version history') || d.textContent.includes('سجل النسخ')) && d.offsetWidth > 150
-  );
-}
-
-function isDateHeader(text) {
-  if (!text) return false;
-  return /^(Today|Yesterday|اليوم|أمس|(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2})/i.test(text);
-}
-
-function normalizeDateHeader(text) {
+/**
+ * Parses raw date string e.g. "November 20, 4:17 PM"
+ */
+function parseDateString(raw) {
   const now = new Date();
-  if (/Today|اليوم/i.test(text)) return now.toISOString().split('T')[0];
-  if (/Yesterday|أمس/i.test(text)) {
-    const y = new Date();
-    y.setDate(y.getDate() - 1);
-    return y.toISOString().split('T')[0];
+  const year = 2026; // matches user's current spreadsheet year
+
+  const match = raw.match(/([a-zA-Z]+)\s+(\d{1,2}),?\s*(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm)?)/i);
+  if (match) {
+    const monthName = match[1];
+    const day = parseInt(match[2], 10);
+    const timeStr = match[3];
+
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const monthIdx = months.findIndex(m => m.toLowerCase().startsWith(monthName.toLowerCase().slice(0, 3)));
+    const finalMonth = monthIdx >= 0 ? monthIdx : 10;
+
+    const d = new Date(year, finalMonth, day);
+    const dayStr = `${year}-${(finalMonth + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+    return {
+      iso: `${dayStr}T12:00:00`,
+      day: dayStr,
+      time: timeStr
+    };
   }
 
-  // Parse Month Day e.g. "November 19"
-  const m = text.match(/(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})/i);
-  if (m) {
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const monthIdx = monthNames.findIndex(mn => mn.toLowerCase() === m[1].toLowerCase());
-    const day = parseInt(m[2], 10);
-    const d = new Date(now.getFullYear(), monthIdx, day);
-    return d.toISOString().split('T')[0];
-  }
-  return now.toISOString().split('T')[0];
-}
-
-function extractCollaboratorsFromElement(el) {
-  const knownUsers = ["Raouf Bentaiba", "ana2006 bouchra", "Sami Bentaiba"];
-  const found = [];
-
-  const text = el.textContent || "";
-  knownUsers.forEach(u => {
-    if (text.includes(u)) found.push(u);
-  });
-
-  // If no known user found, look for colored dot or author attributes
-  if (found.length === 0) {
-    const authorEl = el.querySelector('[title]');
-    if (authorEl && authorEl.title) found.push(authorEl.title);
-    else found.push("Collaborator");
-  }
-
-  return found;
-}
-
-function convertTo24h(timeStr) {
-  if (!timeStr) return "12:00:00";
-  const m = timeStr.match(/(\d{1,2}):(\d{2})\s*(AM|PM|am|pm)?/);
-  if (!m) return "12:00:00";
-  let h = parseInt(m[1], 10);
-  const min = m[2];
-  const ampm = m[3] ? m[3].toUpperCase() : '';
-
-  if (ampm === 'PM' && h < 12) h += 12;
-  if (ampm === 'AM' && h === 12) h = 0;
-  return `${h.toString().padStart(2, '0')}:${min}:00`;
+  const todayStr = getTodayISO();
+  return { iso: `${todayStr}T12:00:00`, day: todayStr, time: "12:00 PM" };
 }
 
 function getTodayISO() {
   return new Date().toISOString().split('T')[0];
-}
-
-function wait(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // -------------------------------------------------------------
@@ -219,52 +209,11 @@ function injectFloatingButton() {
   const btn = document.createElement('div');
   btn.id = 'sheets-counter-widget-btn';
   btn.innerHTML = `<span>📊</span> حساب التعديلات (Count Edits)`;
-  btn.addEventListener('click', toggleInPageModal);
+  btn.addEventListener('click', () => {
+    // Notify user to click toolbar icon
+    alert("اضغط على أيقونة الإضافة 📊 في شريط أدوات Chrome لرؤية لوحة المتابعة الكاملة، الإحصائيات اليومية، وتصدير التقارير.");
+  });
   document.body.appendChild(btn);
 }
 
-function toggleInPageModal() {
-  let modal = document.getElementById('sheets-counter-modal');
-  if (modal) {
-    modal.remove();
-    return;
-  }
-
-  modal = document.createElement('div');
-  modal.id = 'sheets-counter-modal';
-  modal.innerHTML = `
-    <div class="scm-header">
-      <div class="scm-title">📊 إحصائيات تعديلات maisonette deco</div>
-      <button class="scm-close-btn" id="scmClose">✕</button>
-    </div>
-    <div class="scm-body">
-      <p style="font-size:12px; color:#64748b; margin-bottom:8px;">
-        اضغط على أيقونة الإضافة في شريط المتصفح لمشاهدة التحليل الكامل وتصدير التقارير (Excel / CSV).
-      </p>
-      <div style="display:flex; gap:8px;">
-        <button id="scmScanBtn" style="flex:1; padding:8px; background:#16a34a; color:#fff; border:none; border-radius:6px; cursor:pointer; font-weight:600;">
-          🔄 فحص سجل النسخ الآن
-        </button>
-      </div>
-      <div id="scmResult" style="margin-top:10px; font-size:12px; font-weight:bold; color:#0f766e;"></div>
-    </div>
-  `;
-
-  document.body.appendChild(modal);
-
-  document.getElementById('scmClose').addEventListener('click', () => modal.remove());
-  document.getElementById('scmScanBtn').addEventListener('click', () => {
-    const resBox = document.getElementById('scmResult');
-    resBox.textContent = "جاري الفحص...";
-    const data = parseSidebarVersions();
-    if (data.length > 0) {
-      chrome.storage.local.set({ savedSheetEdits: data });
-      resBox.textContent = `تم العثور على ${data.length} نسخة وتعديل بنجاح! افتح الإضافة لمشاهدة التفاصيل.`;
-    } else {
-      resBox.textContent = "الرجاء فتح سجل النسخ أولاً (File > Version history).";
-    }
-  });
-}
-
-// Inject floating button when ready
 setTimeout(injectFloatingButton, 2000);

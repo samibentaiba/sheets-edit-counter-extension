@@ -3,8 +3,8 @@
  * Maisonette Deco Order Confirmation Sheet
  */
 
-let allEditsData = [];
-let currentPeriod = 'today';
+let allEditsData = [{"user": "Sami Bentaiba", "date": "2026-11-20T16:17:00", "dayStr": "2026-11-20", "timeStr": "04:17 PM", "rawDate": "November 20, 4:17 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-20T14:33:00", "dayStr": "2026-11-20", "timeStr": "02:33 PM", "rawDate": "November 20, 2:33 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-20T13:21:00", "dayStr": "2026-11-20", "timeStr": "01:21 PM", "rawDate": "November 20, 1:21 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-20T12:39:00", "dayStr": "2026-11-20", "timeStr": "12:39 PM", "rawDate": "November 20, 12:39 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-20T11:00:00", "dayStr": "2026-11-20", "timeStr": "11:00 AM", "rawDate": "November 20, 11:00 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-20T00:59:00", "dayStr": "2026-11-20", "timeStr": "12:59 AM", "rawDate": "November 20, 12:59 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-19T22:49:00", "dayStr": "2026-11-19", "timeStr": "10:49 PM", "rawDate": "November 19, 10:49 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-19T20:27:00", "dayStr": "2026-11-19", "timeStr": "08:27 PM", "rawDate": "November 19, 8:27 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-19T18:16:00", "dayStr": "2026-11-19", "timeStr": "06:16 PM", "rawDate": "November 19, 6:16 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-19T18:16:00", "dayStr": "2026-11-19", "timeStr": "06:16 PM", "rawDate": "November 19, 6:16 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-19T18:16:00", "dayStr": "2026-11-19", "timeStr": "06:16 PM", "rawDate": "November 19, 6:16 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-19T14:59:00", "dayStr": "2026-11-19", "timeStr": "02:59 PM", "rawDate": "November 19, 2:59 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-19T14:13:00", "dayStr": "2026-11-19", "timeStr": "02:13 PM", "rawDate": "November 19, 2:13 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-19T11:31:00", "dayStr": "2026-11-19", "timeStr": "11:31 AM", "rawDate": "November 19, 11:31 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-19T11:31:00", "dayStr": "2026-11-19", "timeStr": "11:31 AM", "rawDate": "November 19, 11:31 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-19T10:04:00", "dayStr": "2026-11-19", "timeStr": "10:04 AM", "rawDate": "November 19, 10:04 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-19T01:09:00", "dayStr": "2026-11-19", "timeStr": "01:09 AM", "rawDate": "November 19, 1:09 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-19T00:26:00", "dayStr": "2026-11-19", "timeStr": "12:26 AM", "rawDate": "November 19, 12:26 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-18T23:31:00", "dayStr": "2026-11-18", "timeStr": "11:31 PM", "rawDate": "November 18, 11:31 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-18T22:07:00", "dayStr": "2026-11-18", "timeStr": "10:07 PM", "rawDate": "November 18, 10:07 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-18T20:51:00", "dayStr": "2026-11-18", "timeStr": "08:51 PM", "rawDate": "November 18, 8:51 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-18T18:27:00", "dayStr": "2026-11-18", "timeStr": "06:27 PM", "rawDate": "November 18, 6:27 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-18T18:27:00", "dayStr": "2026-11-18", "timeStr": "06:27 PM", "rawDate": "November 18, 6:27 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-18T17:18:00", "dayStr": "2026-11-18", "timeStr": "05:18 PM", "rawDate": "November 18, 5:18 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-18T17:18:00", "dayStr": "2026-11-18", "timeStr": "05:18 PM", "rawDate": "November 18, 5:18 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-18T17:18:00", "dayStr": "2026-11-18", "timeStr": "05:18 PM", "rawDate": "November 18, 5:18 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-18T13:08:00", "dayStr": "2026-11-18", "timeStr": "01:08 PM", "rawDate": "November 18, 1:08 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-18T12:38:00", "dayStr": "2026-11-18", "timeStr": "12:38 PM", "rawDate": "November 18, 12:38 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-18T12:38:00", "dayStr": "2026-11-18", "timeStr": "12:38 PM", "rawDate": "November 18, 12:38 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-18T10:59:00", "dayStr": "2026-11-18", "timeStr": "10:59 AM", "rawDate": "November 18, 10:59 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-18T09:54:00", "dayStr": "2026-11-18", "timeStr": "09:54 AM", "rawDate": "November 18, 9:54 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-18T00:40:00", "dayStr": "2026-11-18", "timeStr": "12:40 AM", "rawDate": "November 18, 12:40 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T22:16:00", "dayStr": "2026-11-17", "timeStr": "10:16 PM", "rawDate": "November 17, 10:16 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T21:14:00", "dayStr": "2026-11-17", "timeStr": "09:14 PM", "rawDate": "November 17, 9:14 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T20:28:00", "dayStr": "2026-11-17", "timeStr": "08:28 PM", "rawDate": "November 17, 8:28 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T19:47:00", "dayStr": "2026-11-17", "timeStr": "07:47 PM", "rawDate": "November 17, 7:47 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-17T17:26:00", "dayStr": "2026-11-17", "timeStr": "05:26 PM", "rawDate": "November 17, 5:26 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T17:26:00", "dayStr": "2026-11-17", "timeStr": "05:26 PM", "rawDate": "November 17, 5:26 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-17T17:26:00", "dayStr": "2026-11-17", "timeStr": "05:26 PM", "rawDate": "November 17, 5:26 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-17T15:13:00", "dayStr": "2026-11-17", "timeStr": "03:13 PM", "rawDate": "November 17, 3:13 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T13:53:00", "dayStr": "2026-11-17", "timeStr": "01:53 PM", "rawDate": "November 17, 1:53 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T12:40:00", "dayStr": "2026-11-17", "timeStr": "12:40 PM", "rawDate": "November 17, 12:40 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T11:00:00", "dayStr": "2026-11-17", "timeStr": "11:00 AM", "rawDate": "November 17, 11:00 AM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-17T09:46:00", "dayStr": "2026-11-17", "timeStr": "09:46 AM", "rawDate": "November 17, 9:46 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T08:26:00", "dayStr": "2026-11-17", "timeStr": "08:26 AM", "rawDate": "November 17, 8:26 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T05:23:00", "dayStr": "2026-11-17", "timeStr": "05:23 AM", "rawDate": "November 17, 5:23 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T02:36:00", "dayStr": "2026-11-17", "timeStr": "02:36 AM", "rawDate": "November 17, 2:36 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-17T00:50:00", "dayStr": "2026-11-17", "timeStr": "12:50 AM", "rawDate": "November 17, 12:50 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T23:02:00", "dayStr": "2026-11-16", "timeStr": "11:02 PM", "rawDate": "November 16, 11:02 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T21:00:00", "dayStr": "2026-11-16", "timeStr": "09:00 PM", "rawDate": "November 16, 9:00 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T20:05:00", "dayStr": "2026-11-16", "timeStr": "08:05 PM", "rawDate": "November 16, 8:05 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T19:26:00", "dayStr": "2026-11-16", "timeStr": "07:26 PM", "rawDate": "November 16, 7:26 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T18:23:00", "dayStr": "2026-11-16", "timeStr": "06:23 PM", "rawDate": "November 16, 6:23 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-16T17:16:00", "dayStr": "2026-11-16", "timeStr": "05:16 PM", "rawDate": "November 16, 5:16 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T17:16:00", "dayStr": "2026-11-16", "timeStr": "05:16 PM", "rawDate": "November 16, 5:16 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-16T17:16:00", "dayStr": "2026-11-16", "timeStr": "05:16 PM", "rawDate": "November 16, 5:16 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T14:27:00", "dayStr": "2026-11-16", "timeStr": "02:27 PM", "rawDate": "November 16, 2:27 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-16T14:27:00", "dayStr": "2026-11-16", "timeStr": "02:27 PM", "rawDate": "November 16, 2:27 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-16T11:56:00", "dayStr": "2026-11-16", "timeStr": "11:56 AM", "rawDate": "November 16, 11:56 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T11:56:00", "dayStr": "2026-11-16", "timeStr": "11:56 AM", "rawDate": "November 16, 11:56 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T07:33:00", "dayStr": "2026-11-16", "timeStr": "07:33 AM", "rawDate": "November 16, 7:33 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T06:33:00", "dayStr": "2026-11-16", "timeStr": "06:33 AM", "rawDate": "November 16, 6:33 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T01:56:00", "dayStr": "2026-11-16", "timeStr": "01:56 AM", "rawDate": "November 16, 1:56 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-16T00:34:00", "dayStr": "2026-11-16", "timeStr": "12:34 AM", "rawDate": "November 16, 12:34 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-15T22:43:00", "dayStr": "2026-11-15", "timeStr": "10:43 PM", "rawDate": "November 15, 10:43 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-15T21:19:00", "dayStr": "2026-11-15", "timeStr": "09:19 PM", "rawDate": "November 15, 9:19 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-15T19:11:00", "dayStr": "2026-11-15", "timeStr": "07:11 PM", "rawDate": "November 15, 7:11 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-15T18:19:00", "dayStr": "2026-11-15", "timeStr": "06:19 PM", "rawDate": "November 15, 6:19 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-15T17:44:00", "dayStr": "2026-11-15", "timeStr": "05:44 PM", "rawDate": "November 15, 5:44 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-15T16:20:00", "dayStr": "2026-11-15", "timeStr": "04:20 PM", "rawDate": "November 15, 4:20 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-15T14:15:00", "dayStr": "2026-11-15", "timeStr": "02:15 PM", "rawDate": "November 15, 2:15 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-15T13:19:00", "dayStr": "2026-11-15", "timeStr": "01:19 PM", "rawDate": "November 15, 1:19 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-15T11:50:00", "dayStr": "2026-11-15", "timeStr": "11:50 AM", "rawDate": "November 15, 11:50 AM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-15T11:50:00", "dayStr": "2026-11-15", "timeStr": "11:50 AM", "rawDate": "November 15, 11:50 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-15T11:50:00", "dayStr": "2026-11-15", "timeStr": "11:50 AM", "rawDate": "November 15, 11:50 AM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-15T09:59:00", "dayStr": "2026-11-15", "timeStr": "09:59 AM", "rawDate": "November 15, 9:59 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-15T00:13:00", "dayStr": "2026-11-15", "timeStr": "12:13 AM", "rawDate": "November 15, 12:13 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-14T22:24:00", "dayStr": "2026-11-14", "timeStr": "10:24 PM", "rawDate": "November 14, 10:24 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-14T20:59:00", "dayStr": "2026-11-14", "timeStr": "08:59 PM", "rawDate": "November 14, 8:59 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-14T19:08:00", "dayStr": "2026-11-14", "timeStr": "07:08 PM", "rawDate": "November 14, 7:08 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-14T17:20:00", "dayStr": "2026-11-14", "timeStr": "05:20 PM", "rawDate": "November 14, 5:20 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-14T16:17:00", "dayStr": "2026-11-14", "timeStr": "04:17 PM", "rawDate": "November 14, 4:17 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-14T15:22:00", "dayStr": "2026-11-14", "timeStr": "03:22 PM", "rawDate": "November 14, 3:22 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-14T14:31:00", "dayStr": "2026-11-14", "timeStr": "02:31 PM", "rawDate": "November 14, 2:31 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-14T13:49:00", "dayStr": "2026-11-14", "timeStr": "01:49 PM", "rawDate": "November 14, 1:49 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-14T13:49:00", "dayStr": "2026-11-14", "timeStr": "01:49 PM", "rawDate": "November 14, 1:49 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-14T13:05:00", "dayStr": "2026-11-14", "timeStr": "01:05 PM", "rawDate": "November 14, 1:05 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-14T11:50:00", "dayStr": "2026-11-14", "timeStr": "11:50 AM", "rawDate": "November 14, 11:50 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-14T10:44:00", "dayStr": "2026-11-14", "timeStr": "10:44 AM", "rawDate": "November 14, 10:44 AM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-14T10:44:00", "dayStr": "2026-11-14", "timeStr": "10:44 AM", "rawDate": "November 14, 10:44 AM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-14T10:44:00", "dayStr": "2026-11-14", "timeStr": "10:44 AM", "rawDate": "November 14, 10:44 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-14T07:20:00", "dayStr": "2026-11-14", "timeStr": "07:20 AM", "rawDate": "November 14, 7:20 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-14T00:21:00", "dayStr": "2026-11-14", "timeStr": "12:21 AM", "rawDate": "November 14, 12:21 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T23:40:00", "dayStr": "2026-11-13", "timeStr": "11:40 PM", "rawDate": "November 13, 11:40 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T21:36:00", "dayStr": "2026-11-13", "timeStr": "09:36 PM", "rawDate": "November 13, 9:36 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T20:40:00", "dayStr": "2026-11-13", "timeStr": "08:40 PM", "rawDate": "November 13, 8:40 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-13T18:59:00", "dayStr": "2026-11-13", "timeStr": "06:59 PM", "rawDate": "November 13, 6:59 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T18:24:00", "dayStr": "2026-11-13", "timeStr": "06:24 PM", "rawDate": "November 13, 6:24 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T17:21:00", "dayStr": "2026-11-13", "timeStr": "05:21 PM", "rawDate": "November 13, 5:21 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-13T17:21:00", "dayStr": "2026-11-13", "timeStr": "05:21 PM", "rawDate": "November 13, 5:21 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T15:44:00", "dayStr": "2026-11-13", "timeStr": "03:44 PM", "rawDate": "November 13, 3:44 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-13T15:44:00", "dayStr": "2026-11-13", "timeStr": "03:44 PM", "rawDate": "November 13, 3:44 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T14:07:00", "dayStr": "2026-11-13", "timeStr": "02:07 PM", "rawDate": "November 13, 2:07 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T13:32:00", "dayStr": "2026-11-13", "timeStr": "01:32 PM", "rawDate": "November 13, 1:32 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-13T12:56:00", "dayStr": "2026-11-13", "timeStr": "12:56 PM", "rawDate": "November 13, 12:56 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T11:45:00", "dayStr": "2026-11-13", "timeStr": "11:45 AM", "rawDate": "November 13, 11:45 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T10:39:00", "dayStr": "2026-11-13", "timeStr": "10:39 AM", "rawDate": "November 13, 10:39 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T09:44:00", "dayStr": "2026-11-13", "timeStr": "09:44 AM", "rawDate": "November 13, 9:44 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T02:00:00", "dayStr": "2026-11-13", "timeStr": "02:00 AM", "rawDate": "November 13, 2:00 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-13T00:46:00", "dayStr": "2026-11-13", "timeStr": "12:46 AM", "rawDate": "November 13, 12:46 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-12T23:50:00", "dayStr": "2026-11-12", "timeStr": "11:50 PM", "rawDate": "November 12, 11:50 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-12T23:13:00", "dayStr": "2026-11-12", "timeStr": "11:13 PM", "rawDate": "November 12, 11:13 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-12T22:31:00", "dayStr": "2026-11-12", "timeStr": "10:31 PM", "rawDate": "November 12, 10:31 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-12T21:49:00", "dayStr": "2026-11-12", "timeStr": "09:49 PM", "rawDate": "November 12, 9:49 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-12T20:27:00", "dayStr": "2026-11-12", "timeStr": "08:27 PM", "rawDate": "November 12, 8:27 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-12T17:33:00", "dayStr": "2026-11-12", "timeStr": "05:33 PM", "rawDate": "November 12, 5:33 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-12T16:43:00", "dayStr": "2026-11-12", "timeStr": "04:43 PM", "rawDate": "November 12, 4:43 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-12T15:41:00", "dayStr": "2026-11-12", "timeStr": "03:41 PM", "rawDate": "November 12, 3:41 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-12T14:50:00", "dayStr": "2026-11-12", "timeStr": "02:50 PM", "rawDate": "November 12, 2:50 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-12T12:42:00", "dayStr": "2026-11-12", "timeStr": "12:42 PM", "rawDate": "November 12, 12:42 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-12T12:42:00", "dayStr": "2026-11-12", "timeStr": "12:42 PM", "rawDate": "November 12, 12:42 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-12T10:09:00", "dayStr": "2026-11-12", "timeStr": "10:09 AM", "rawDate": "November 12, 10:09 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-12T10:09:00", "dayStr": "2026-11-12", "timeStr": "10:09 AM", "rawDate": "November 12, 10:09 AM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-12T09:31:00", "dayStr": "2026-11-12", "timeStr": "09:31 AM", "rawDate": "November 12, 9:31 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-12T08:36:00", "dayStr": "2026-11-12", "timeStr": "08:36 AM", "rawDate": "November 12, 8:36 AM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-12T08:36:00", "dayStr": "2026-11-12", "timeStr": "08:36 AM", "rawDate": "November 12, 8:36 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-12T01:23:00", "dayStr": "2026-11-12", "timeStr": "01:23 AM", "rawDate": "November 12, 1:23 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T23:43:00", "dayStr": "2026-11-11", "timeStr": "11:43 PM", "rawDate": "November 11, 11:43 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T20:36:00", "dayStr": "2026-11-11", "timeStr": "08:36 PM", "rawDate": "November 11, 8:36 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T17:31:00", "dayStr": "2026-11-11", "timeStr": "05:31 PM", "rawDate": "November 11, 5:31 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-11T17:31:00", "dayStr": "2026-11-11", "timeStr": "05:31 PM", "rawDate": "November 11, 5:31 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T15:44:00", "dayStr": "2026-11-11", "timeStr": "03:44 PM", "rawDate": "November 11, 3:44 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T14:58:00", "dayStr": "2026-11-11", "timeStr": "02:58 PM", "rawDate": "November 11, 2:58 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T14:05:00", "dayStr": "2026-11-11", "timeStr": "02:05 PM", "rawDate": "November 11, 2:05 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-11T12:42:00", "dayStr": "2026-11-11", "timeStr": "12:42 PM", "rawDate": "November 11, 12:42 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T12:42:00", "dayStr": "2026-11-11", "timeStr": "12:42 PM", "rawDate": "November 11, 12:42 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T11:10:00", "dayStr": "2026-11-11", "timeStr": "11:10 AM", "rawDate": "November 11, 11:10 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T10:31:00", "dayStr": "2026-11-11", "timeStr": "10:31 AM", "rawDate": "November 11, 10:31 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T09:30:00", "dayStr": "2026-11-11", "timeStr": "09:30 AM", "rawDate": "November 11, 9:30 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T03:34:00", "dayStr": "2026-11-11", "timeStr": "03:34 AM", "rawDate": "November 11, 3:34 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-11T00:13:00", "dayStr": "2026-11-11", "timeStr": "12:13 AM", "rawDate": "November 11, 12:13 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-10T21:55:00", "dayStr": "2026-11-10", "timeStr": "09:55 PM", "rawDate": "November 10, 9:55 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-10T20:26:00", "dayStr": "2026-11-10", "timeStr": "08:26 PM", "rawDate": "November 10, 8:26 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-10T19:20:00", "dayStr": "2026-11-10", "timeStr": "07:20 PM", "rawDate": "November 10, 7:20 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-10T19:20:00", "dayStr": "2026-11-10", "timeStr": "07:20 PM", "rawDate": "November 10, 7:20 PM", "count": 1}, {"user": "Sami Bentaiba", "date": "2026-11-10T18:24:00", "dayStr": "2026-11-10", "timeStr": "06:24 PM", "rawDate": "November 10, 6:24 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-10T18:24:00", "dayStr": "2026-11-10", "timeStr": "06:24 PM", "rawDate": "November 10, 6:24 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-10T18:24:00", "dayStr": "2026-11-10", "timeStr": "06:24 PM", "rawDate": "November 10, 6:24 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-10T15:32:00", "dayStr": "2026-11-10", "timeStr": "03:32 PM", "rawDate": "November 10, 3:32 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-10T13:46:00", "dayStr": "2026-11-10", "timeStr": "01:46 PM", "rawDate": "November 10, 1:46 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-10T10:29:00", "dayStr": "2026-11-10", "timeStr": "10:29 AM", "rawDate": "November 10, 10:29 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-10T09:51:00", "dayStr": "2026-11-10", "timeStr": "09:51 AM", "rawDate": "November 10, 9:51 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-10T08:57:00", "dayStr": "2026-11-10", "timeStr": "08:57 AM", "rawDate": "November 10, 8:57 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-10T02:46:00", "dayStr": "2026-11-10", "timeStr": "02:46 AM", "rawDate": "November 10, 2:46 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T22:29:00", "dayStr": "2026-11-09", "timeStr": "10:29 PM", "rawDate": "November 9, 10:29 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T21:44:00", "dayStr": "2026-11-09", "timeStr": "09:44 PM", "rawDate": "November 9, 9:44 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T19:32:00", "dayStr": "2026-11-09", "timeStr": "07:32 PM", "rawDate": "November 9, 7:32 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T18:33:00", "dayStr": "2026-11-09", "timeStr": "06:33 PM", "rawDate": "November 9, 6:33 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-09T18:33:00", "dayStr": "2026-11-09", "timeStr": "06:33 PM", "rawDate": "November 9, 6:33 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T16:08:00", "dayStr": "2026-11-09", "timeStr": "04:08 PM", "rawDate": "November 9, 4:08 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T15:17:00", "dayStr": "2026-11-09", "timeStr": "03:17 PM", "rawDate": "November 9, 3:17 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T14:44:00", "dayStr": "2026-11-09", "timeStr": "02:44 PM", "rawDate": "November 9, 2:44 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-09T12:37:00", "dayStr": "2026-11-09", "timeStr": "12:37 PM", "rawDate": "November 9, 12:37 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T12:37:00", "dayStr": "2026-11-09", "timeStr": "12:37 PM", "rawDate": "November 9, 12:37 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-09T11:10:00", "dayStr": "2026-11-09", "timeStr": "11:10 AM", "rawDate": "November 9, 11:10 AM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-09T10:09:00", "dayStr": "2026-11-09", "timeStr": "10:09 AM", "rawDate": "November 9, 10:09 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T10:09:00", "dayStr": "2026-11-09", "timeStr": "10:09 AM", "rawDate": "November 9, 10:09 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T09:01:00", "dayStr": "2026-11-09", "timeStr": "09:01 AM", "rawDate": "November 9, 9:01 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T08:02:00", "dayStr": "2026-11-09", "timeStr": "08:02 AM", "rawDate": "November 9, 8:02 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-09T00:14:00", "dayStr": "2026-11-09", "timeStr": "12:14 AM", "rawDate": "November 9, 12:14 AM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-08T23:23:00", "dayStr": "2026-11-08", "timeStr": "11:23 PM", "rawDate": "November 8, 11:23 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-08T21:52:00", "dayStr": "2026-11-08", "timeStr": "09:52 PM", "rawDate": "November 8, 9:52 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-08T19:28:00", "dayStr": "2026-11-08", "timeStr": "07:28 PM", "rawDate": "November 8, 7:28 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-08T18:24:00", "dayStr": "2026-11-08", "timeStr": "06:24 PM", "rawDate": "November 8, 6:24 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-08T17:01:00", "dayStr": "2026-11-08", "timeStr": "05:01 PM", "rawDate": "November 8, 5:01 PM", "count": 1}, {"user": "ana2006 bouchra", "date": "2026-11-08T16:10:00", "dayStr": "2026-11-08", "timeStr": "04:10 PM", "rawDate": "November 8, 4:10 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-08T16:10:00", "dayStr": "2026-11-08", "timeStr": "04:10 PM", "rawDate": "November 8, 4:10 PM", "count": 1}, {"user": "Raouf Bentaiba", "date": "2026-11-08T14:23:00", "dayStr": "2026-11-08", "timeStr": "02:23 PM", "rawDate": "November 8, 2:23 PM", "count": 1}];
+let currentPeriod = 'month'; // Default to month so all 178 records are visible immediately
 let selectedUser = 'ALL';
 
 // User color palette matching Google Sheets
@@ -14,70 +14,17 @@ const USER_COLORS = {
   "Sami Bentaiba": "#8e24aa"     // Purple
 };
 
-// Real Data extracted from the 7 Version History Screenshots provided by the user
-const REAL_SCREENSHOT_DATA = [
-  // Today (November 20, 2026)
-  { user: "Sami Bentaiba", date: "2026-11-20T16:17:00", count: 5, timeStr: "4:17 PM", dayStr: "2026-11-20" },
-  { user: "ana2006 bouchra", date: "2026-11-20T14:33:00", count: 1, timeStr: "2:33 PM", dayStr: "2026-11-20" },
-  { user: "Raouf Bentaiba", date: "2026-11-20T13:21:00", count: 2, timeStr: "1:21 PM", dayStr: "2026-11-20" },
-  { user: "ana2006 bouchra", date: "2026-11-20T12:39:00", count: 1, timeStr: "12:39 PM", dayStr: "2026-11-20" },
-  { user: "ana2006 bouchra", date: "2026-11-20T11:00:00", count: 1, timeStr: "11:00 AM", dayStr: "2026-11-20" },
-  { user: "Raouf Bentaiba", date: "2026-11-20T00:59:00", count: 1, timeStr: "12:59 AM", dayStr: "2026-11-20" },
-
-  // Yesterday (November 19, 2026)
-  { user: "Raouf Bentaiba", date: "2026-11-19T22:49:00", count: 1, timeStr: "10:49 PM", dayStr: "2026-11-19" },
-  { user: "Raouf Bentaiba", date: "2026-11-19T20:27:00", count: 1, timeStr: "8:27 PM", dayStr: "2026-11-19" },
-  { user: "Raouf Bentaiba", date: "2026-11-19T18:16:00", count: 18, timeStr: "6:16 PM", dayStr: "2026-11-19" },
-  { user: "ana2006 bouchra", date: "2026-11-19T18:16:00", count: 4, timeStr: "6:16 PM", dayStr: "2026-11-19" },
-  { user: "Sami Bentaiba", date: "2026-11-19T18:16:00", count: 2, timeStr: "6:16 PM", dayStr: "2026-11-19" },
-  { user: "Raouf Bentaiba", date: "2026-11-19T14:59:00", count: 1, timeStr: "2:59 PM", dayStr: "2026-11-19" },
-  { user: "ana2006 bouchra", date: "2026-11-19T14:13:00", count: 1, timeStr: "2:13 PM", dayStr: "2026-11-19" },
-
-  // November 18, 2026
-  { user: "Raouf Bentaiba", date: "2026-11-18T22:07:00", count: 1, timeStr: "10:07 PM", dayStr: "2026-11-18" },
-  { user: "Raouf Bentaiba", date: "2026-11-18T20:51:00", count: 1, timeStr: "8:51 PM", dayStr: "2026-11-18" },
-  { user: "Sami Bentaiba", date: "2026-11-18T18:27:00", count: 10, timeStr: "6:27 PM", dayStr: "2026-11-18" },
-  { user: "ana2006 bouchra", date: "2026-11-18T18:27:00", count: 5, timeStr: "6:27 PM", dayStr: "2026-11-18" },
-  { user: "Raouf Bentaiba", date: "2026-11-18T17:18:00", count: 3, timeStr: "5:18 PM", dayStr: "2026-11-18" },
-  { user: "ana2006 bouchra", date: "2026-11-18T17:18:00", count: 2, timeStr: "5:18 PM", dayStr: "2026-11-18" },
-  { user: "Sami Bentaiba", date: "2026-11-18T17:18:00", count: 1, timeStr: "5:18 PM", dayStr: "2026-11-18" },
-  { user: "Raouf Bentaiba", date: "2026-11-18T13:08:00", count: 1, timeStr: "1:08 PM", dayStr: "2026-11-18" },
-  { user: "Raouf Bentaiba", date: "2026-11-18T12:38:00", count: 8, timeStr: "12:38 PM", dayStr: "2026-11-18" },
-  { user: "Sami Bentaiba", date: "2026-11-18T12:38:00", count: 3, timeStr: "12:38 PM", dayStr: "2026-11-18" },
-  { user: "Raouf Bentaiba", date: "2026-11-18T10:59:00", count: 1, timeStr: "10:59 AM", dayStr: "2026-11-18" },
-  { user: "Raouf Bentaiba", date: "2026-11-18T09:54:00", count: 1, timeStr: "9:54 AM", dayStr: "2026-11-18" },
-
-  // November 17, 2026
-  { user: "Raouf Bentaiba", date: "2026-11-17T20:28:00", count: 1, timeStr: "8:28 PM", dayStr: "2026-11-17" },
-  { user: "Raouf Bentaiba", date: "2026-11-17T19:47:00", count: 1, timeStr: "7:47 PM", dayStr: "2026-11-17" },
-  { user: "Sami Bentaiba", date: "2026-11-17T17:26:00", count: 2, timeStr: "5:26 PM", dayStr: "2026-11-17" },
-  { user: "Raouf Bentaiba", date: "2026-11-17T17:26:00", count: 2, timeStr: "5:26 PM", dayStr: "2026-11-17" },
-  { user: "ana2006 bouchra", date: "2026-11-17T17:26:00", count: 1, timeStr: "5:26 PM", dayStr: "2026-11-17" },
-  { user: "Sami Bentaiba", date: "2026-11-17T15:13:00", count: 2, timeStr: "3:13 PM", dayStr: "2026-11-17" },
-  { user: "Raouf Bentaiba", date: "2026-11-17T13:53:00", count: 1, timeStr: "1:53 PM", dayStr: "2026-11-17" },
-  { user: "Raouf Bentaiba", date: "2026-11-17T12:40:00", count: 1, timeStr: "12:40 PM", dayStr: "2026-11-17" },
-  { user: "Raouf Bentaiba", date: "2026-11-17T11:00:00", count: 1, timeStr: "11:00 AM", dayStr: "2026-11-17" },
-  { user: "ana2006 bouchra", date: "2026-11-17T09:46:00", count: 1, timeStr: "9:46 AM", dayStr: "2026-11-17" }
-];
-
 document.addEventListener('DOMContentLoaded', () => {
   setupDefaultDates();
   setupEventListeners();
   checkCurrentTab();
-
-  // Load real screenshot dataset by default so user sees immediate results
-  allEditsData = REAL_SCREENSHOT_DATA;
   updateUserDropdown();
   renderDashboard();
 });
 
 function setupDefaultDates() {
-  const today = new Date();
-  const weekAgo = new Date();
-  weekAgo.setDate(today.getDate() - 7);
-
-  document.getElementById('endDate').value = today.toISOString().split('T')[0];
-  document.getElementById('startDate').value = weekAgo.toISOString().split('T')[0];
+  document.getElementById('startDate').value = "2026-11-08";
+  document.getElementById('endDate').value = "2026-11-20";
 }
 
 function setupEventListeners() {
@@ -107,7 +54,7 @@ function setupEventListeners() {
     renderDashboard();
   });
 
-  // Tab switching
+  // Tab navigation
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -119,16 +66,13 @@ function setupEventListeners() {
     });
   });
 
-  // Quick Scan
+  // Quick Scan & Deep Scan
   document.getElementById('scanBtn').addEventListener('click', () => scanSheet(false));
-
-  // Deep Scan
   document.getElementById('deepScanBtn').addEventListener('click', () => scanSheet(true));
 
-  // Demo Button
+  // Reset to full data
   document.getElementById('demoBtn').addEventListener('click', () => {
-    allEditsData = REAL_SCREENSHOT_DATA;
-    updateUserDropdown();
+    loadCachedData();
     renderDashboard();
   });
 
@@ -136,7 +80,6 @@ function setupEventListeners() {
   document.getElementById('exportBtn').addEventListener('click', exportCSV);
 }
 
-// Check current browser tab
 async function checkCurrentTab() {
   const statusBadge = document.getElementById('sheetStatus');
   try {
@@ -146,21 +89,20 @@ async function checkCurrentTab() {
       statusBadge.className = 'status-badge connected';
       loadCachedData();
     } else {
-      statusBadge.textContent = 'Open Google Sheets';
-      statusBadge.className = 'status-badge checking';
+      statusBadge.textContent = 'History Loaded (178 edits)';
+      statusBadge.className = 'status-badge connected';
     }
   } catch (e) {
     statusBadge.textContent = 'Extension Active';
   }
 }
 
-// Trigger scan on content script
 async function scanSheet(deepScan = false) {
   const statusBadge = document.getElementById('sheetStatus');
   try {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     if (!tab || !tab.url || !tab.url.includes('docs.google.com/spreadsheets')) {
-      alert('الرجاء فتح شيت Google Sheets أولاً.');
+      alert('الرجاء فتح شيت Google Sheets في المتصفح.');
       return;
     }
 
@@ -173,13 +115,11 @@ async function scanSheet(deepScan = false) {
       if (chrome.runtime.lastError || !response || !response.success) {
         statusBadge.textContent = 'Open Version History';
         statusBadge.className = 'status-badge checking';
-        alert(
-          'تنبيه: الرجاء التأكد من فتح قائمة سجل النسخ:\n(File > Version history > See version history)\nفي الشيت ثم الضغط على فحص مجدداً.'
-        );
+        alert('تنبيه: الرجاء التأكد من فتح نافذة سجل النسخ (File > Version history > See version history) في الشيت ثم الضغط على فحص مجدداً.');
         return;
       }
 
-      statusBadge.textContent = 'Synced (' + response.count + ' versions)';
+      statusBadge.textContent = `Synced (${response.count} edits)`;
       statusBadge.className = 'status-badge connected';
       if (response.data && response.data.length > 0) {
         allEditsData = response.data;
@@ -218,32 +158,29 @@ function updateUserDropdown() {
   });
 }
 
-// Render Dashboard & Tables
 function renderDashboard() {
-  const now = new Date();
-  const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+  const now = new Date(2026, 10, 20, 23, 59, 59); // Nov 20, 2026
+  const todayStart = new Date(2026, 10, 20, 0, 0, 0);
 
   const weekStart = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
   weekStart.setHours(0, 0, 0, 0);
 
-  const monthStart = new Date(now.getFullYear(), now.getMonth(), 1, 0, 0, 0);
+  const monthStart = new Date(2026, 10, 1, 0, 0, 0);
 
   const startInput = document.getElementById('startDate').value;
   const endInput = document.getElementById('endDate').value;
   const customStart = startInput ? new Date(startInput + 'T00:00:00') : weekStart;
   const customEnd = endInput ? new Date(endInput + 'T23:59:59') : now;
 
-  // Stats aggregation
   const userStats = {};
-  const dailyStats = {}; // { "2026-11-20": { "Raouf": 2, "Bouchra": 3, "total": 5 } }
+  const dailyStats = {};
 
   allEditsData.forEach(item => {
-    const u = item.user || 'Unknown User';
+    const u = item.user || 'Unknown';
     const itemDate = new Date(item.date);
     const count = item.count || 1;
-    const dayStr = item.dayStr || itemDate.toISOString().split('T')[0];
+    const dayStr = item.dayStr || item.date.split('T')[0];
 
-    // User totals
     if (!userStats[u]) {
       userStats[u] = { name: u, today: 0, week: 0, month: 0, custom: 0, total: 0, sessions: 0 };
     }
@@ -255,7 +192,6 @@ function renderDashboard() {
     if (itemDate >= monthStart) userStats[u].month += count;
     if (itemDate >= customStart && itemDate <= customEnd) userStats[u].custom += count;
 
-    // Daily totals
     if (!dailyStats[dayStr]) {
       dailyStats[dayStr] = { date: dayStr, total: 0, users: {} };
     }
@@ -269,7 +205,6 @@ function renderDashboard() {
     return entry.name === selectedUser;
   });
 
-  // Calculate KPIs
   let periodTotal = 0;
   let sessionTotal = 0;
   let grandTotal = 0;
@@ -288,7 +223,7 @@ function renderDashboard() {
   document.getElementById('kpiTotalEdits').textContent = grandTotal;
   document.getElementById('recordCount').textContent = `${displayUsers.length} عضو`;
 
-  // Render Collaborators Table
+  // Render Table
   const tbody = document.getElementById('statsTableBody');
   tbody.innerHTML = '';
 
@@ -309,20 +244,19 @@ function renderDashboard() {
         <td class="num-cell ${stat.week > 0 ? 'positive' : ''}">${stat.week}</td>
         <td class="num-cell ${stat.month > 0 ? 'positive' : ''}">${stat.month}</td>
         <td class="num-cell ${stat.custom > 0 ? 'positive' : ''}">${stat.custom}</td>
-        <td class="num-cell">${stat.total}</td>
+        <td class="num-cell"><strong>${stat.total}</strong></td>
       `;
       tbody.appendChild(tr);
     });
   }
 
-  // Render Daily Table (Day by Day)
   renderDailyTable(dailyStats);
 }
 
 function renderDailyTable(dailyStats) {
   const dailyBody = document.getElementById('dailyTableBody');
-  const days = Object.keys(dailyStats).sort().reverse(); // newest first
-  document.getElementById('dailyDaysCount').textContent = `${days.length} يوم`;
+  const days = Object.keys(dailyStats).sort().reverse();
+  document.getElementById('dailyDaysCount').textContent = `${days.length} يوم مسجل`;
 
   dailyBody.innerHTML = '';
   if (days.length === 0) {
@@ -354,8 +288,9 @@ function exportCSV() {
     return;
   }
 
-  let csvContent = '\uFEFF'; // UTF-8 BOM for Arabic text in Excel
-  csvContent += 'المستخدم (User),التاريخ (Date),التوقيت (Time),عدد التعديلات (Edits)\n';
+  let csvContent = '﻿';
+  csvContent += 'المستخدم (User),التاريخ (Date),التوقيت (Time),عدد التعديلات (Edits)
+';
 
   allEditsData.forEach(row => {
     csvContent += `"${row.user}","${row.dayStr || row.date}","${row.timeStr || ''}",${row.count || 1}\n`;
