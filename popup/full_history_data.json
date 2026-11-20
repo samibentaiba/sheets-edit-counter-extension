@@ -5,7 +5,8 @@
     "dayStr": "2026-11-20",
     "timeStr": "04:17 PM",
     "rawDate": "November 20, 4:17 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "ana2006 bouchra",
@@ -13,7 +14,8 @@
     "dayStr": "2026-11-20",
     "timeStr": "02:33 PM",
     "rawDate": "November 20, 2:33 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -21,7 +23,8 @@
     "dayStr": "2026-11-20",
     "timeStr": "01:21 PM",
     "rawDate": "November 20, 1:21 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -29,7 +32,8 @@
     "dayStr": "2026-11-20",
     "timeStr": "12:39 PM",
     "rawDate": "November 20, 12:39 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "ana2006 bouchra",
@@ -37,7 +41,8 @@
     "dayStr": "2026-11-20",
     "timeStr": "11:00 AM",
     "rawDate": "November 20, 11:00 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -45,7 +50,8 @@
     "dayStr": "2026-11-20",
     "timeStr": "12:59 AM",
     "rawDate": "November 20, 12:59 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -53,7 +59,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "10:49 PM",
     "rawDate": "November 19, 10:49 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -61,7 +68,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "08:27 PM",
     "rawDate": "November 19, 8:27 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -69,7 +77,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "06:16 PM",
     "rawDate": "November 19, 6:16 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "ana2006 bouchra",
@@ -77,7 +86,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "06:16 PM",
     "rawDate": "November 19, 6:16 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Sami Bentaiba",
@@ -85,7 +95,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "06:16 PM",
     "rawDate": "November 19, 6:16 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -93,7 +104,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "02:59 PM",
     "rawDate": "November 19, 2:59 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "ana2006 bouchra",
@@ -101,7 +113,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "02:13 PM",
     "rawDate": "November 19, 2:13 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "ana2006 bouchra",
@@ -109,7 +122,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "11:31 AM",
     "rawDate": "November 19, 11:31 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -117,7 +131,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "11:31 AM",
     "rawDate": "November 19, 11:31 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -125,7 +140,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "10:04 AM",
     "rawDate": "November 19, 10:04 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -133,7 +149,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "01:09 AM",
     "rawDate": "November 19, 1:09 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -141,7 +158,8 @@
     "dayStr": "2026-11-19",
     "timeStr": "12:26 AM",
     "rawDate": "November 19, 12:26 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -149,7 +167,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "11:31 PM",
     "rawDate": "November 18, 11:31 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -157,7 +176,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "10:07 PM",
     "rawDate": "November 18, 10:07 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -165,7 +185,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "08:51 PM",
     "rawDate": "November 18, 8:51 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Sami Bentaiba",
@@ -173,7 +194,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "06:27 PM",
     "rawDate": "November 18, 6:27 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -181,7 +203,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "06:27 PM",
     "rawDate": "November 18, 6:27 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -189,7 +212,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "05:18 PM",
     "rawDate": "November 18, 5:18 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -197,7 +221,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "05:18 PM",
     "rawDate": "November 18, 5:18 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Sami Bentaiba",
@@ -205,7 +230,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "05:18 PM",
     "rawDate": "November 18, 5:18 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -213,7 +239,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "01:08 PM",
     "rawDate": "November 18, 1:08 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -221,7 +248,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "12:38 PM",
     "rawDate": "November 18, 12:38 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Sami Bentaiba",
@@ -229,7 +257,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "12:38 PM",
     "rawDate": "November 18, 12:38 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -237,7 +266,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "10:59 AM",
     "rawDate": "November 18, 10:59 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -245,7 +275,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "09:54 AM",
     "rawDate": "November 18, 9:54 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -253,7 +284,8 @@
     "dayStr": "2026-11-18",
     "timeStr": "12:40 AM",
     "rawDate": "November 18, 12:40 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -261,7 +293,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "10:16 PM",
     "rawDate": "November 17, 10:16 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -269,7 +302,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "09:14 PM",
     "rawDate": "November 17, 9:14 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -277,7 +311,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "08:28 PM",
     "rawDate": "November 17, 8:28 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -285,7 +320,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "07:47 PM",
     "rawDate": "November 17, 7:47 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Sami Bentaiba",
@@ -293,7 +329,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "05:26 PM",
     "rawDate": "November 17, 5:26 PM",
-    "count": 1
+    "count": 1,
+    "status": "fausse commande"
   },
   {
     "user": "Raouf Bentaiba",
@@ -301,7 +338,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "05:26 PM",
     "rawDate": "November 17, 5:26 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -309,7 +347,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "05:26 PM",
     "rawDate": "November 17, 5:26 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Sami Bentaiba",
@@ -317,7 +356,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "03:13 PM",
     "rawDate": "November 17, 3:13 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -325,7 +365,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "01:53 PM",
     "rawDate": "November 17, 1:53 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -333,7 +374,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "12:40 PM",
     "rawDate": "November 17, 12:40 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -341,7 +383,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "11:00 AM",
     "rawDate": "November 17, 11:00 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -349,7 +392,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "09:46 AM",
     "rawDate": "November 17, 9:46 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -357,7 +401,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "08:26 AM",
     "rawDate": "November 17, 8:26 AM",
-    "count": 1
+    "count": 1,
+    "status": "fausse commande"
   },
   {
     "user": "Raouf Bentaiba",
@@ -365,7 +410,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "05:23 AM",
     "rawDate": "November 17, 5:23 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -373,7 +419,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "02:36 AM",
     "rawDate": "November 17, 2:36 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -381,7 +428,8 @@
     "dayStr": "2026-11-17",
     "timeStr": "12:50 AM",
     "rawDate": "November 17, 12:50 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -389,7 +437,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "11:02 PM",
     "rawDate": "November 16, 11:02 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -397,7 +446,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "09:00 PM",
     "rawDate": "November 16, 9:00 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -405,7 +455,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "08:05 PM",
     "rawDate": "November 16, 8:05 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -413,7 +464,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "07:26 PM",
     "rawDate": "November 16, 7:26 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -421,7 +473,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "06:23 PM",
     "rawDate": "November 16, 6:23 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Sami Bentaiba",
@@ -429,7 +482,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "05:16 PM",
     "rawDate": "November 16, 5:16 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -437,7 +491,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "05:16 PM",
     "rawDate": "November 16, 5:16 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -445,7 +500,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "05:16 PM",
     "rawDate": "November 16, 5:16 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -453,7 +509,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "02:27 PM",
     "rawDate": "November 16, 2:27 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Sami Bentaiba",
@@ -461,7 +518,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "02:27 PM",
     "rawDate": "November 16, 2:27 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Sami Bentaiba",
@@ -469,7 +527,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "11:56 AM",
     "rawDate": "November 16, 11:56 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -477,7 +536,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "11:56 AM",
     "rawDate": "November 16, 11:56 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -485,7 +545,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "07:33 AM",
     "rawDate": "November 16, 7:33 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -493,7 +554,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "06:33 AM",
     "rawDate": "November 16, 6:33 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -501,7 +563,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "01:56 AM",
     "rawDate": "November 16, 1:56 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -509,7 +572,8 @@
     "dayStr": "2026-11-16",
     "timeStr": "12:34 AM",
     "rawDate": "November 16, 12:34 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -517,7 +581,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "10:43 PM",
     "rawDate": "November 15, 10:43 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -525,7 +590,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "09:19 PM",
     "rawDate": "November 15, 9:19 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -533,7 +599,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "07:11 PM",
     "rawDate": "November 15, 7:11 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -541,7 +608,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "06:19 PM",
     "rawDate": "November 15, 6:19 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -549,7 +617,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "05:44 PM",
     "rawDate": "November 15, 5:44 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -557,7 +626,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "04:20 PM",
     "rawDate": "November 15, 4:20 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -565,7 +635,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "02:15 PM",
     "rawDate": "November 15, 2:15 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -573,7 +644,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "01:19 PM",
     "rawDate": "November 15, 1:19 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "ana2006 bouchra",
@@ -581,7 +653,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "11:50 AM",
     "rawDate": "November 15, 11:50 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Sami Bentaiba",
@@ -589,7 +662,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "11:50 AM",
     "rawDate": "November 15, 11:50 AM",
-    "count": 1
+    "count": 1,
+    "status": "fausse commande"
   },
   {
     "user": "Raouf Bentaiba",
@@ -597,7 +671,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "11:50 AM",
     "rawDate": "November 15, 11:50 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Sami Bentaiba",
@@ -605,7 +680,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "09:59 AM",
     "rawDate": "November 15, 9:59 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -613,7 +689,8 @@
     "dayStr": "2026-11-15",
     "timeStr": "12:13 AM",
     "rawDate": "November 15, 12:13 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -621,7 +698,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "10:24 PM",
     "rawDate": "November 14, 10:24 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -629,7 +707,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "08:59 PM",
     "rawDate": "November 14, 8:59 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -637,7 +716,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "07:08 PM",
     "rawDate": "November 14, 7:08 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -645,7 +725,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "05:20 PM",
     "rawDate": "November 14, 5:20 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -653,7 +734,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "04:17 PM",
     "rawDate": "November 14, 4:17 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "ana2006 bouchra",
@@ -661,7 +743,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "03:22 PM",
     "rawDate": "November 14, 3:22 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -669,7 +752,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "02:31 PM",
     "rawDate": "November 14, 2:31 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -677,7 +761,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "01:49 PM",
     "rawDate": "November 14, 1:49 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Sami Bentaiba",
@@ -685,7 +770,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "01:49 PM",
     "rawDate": "November 14, 1:49 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Sami Bentaiba",
@@ -693,7 +779,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "01:05 PM",
     "rawDate": "November 14, 1:05 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Sami Bentaiba",
@@ -701,7 +788,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "11:50 AM",
     "rawDate": "November 14, 11:50 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -709,7 +797,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "10:44 AM",
     "rawDate": "November 14, 10:44 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Sami Bentaiba",
@@ -717,7 +806,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "10:44 AM",
     "rawDate": "November 14, 10:44 AM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "ana2006 bouchra",
@@ -725,7 +815,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "10:44 AM",
     "rawDate": "November 14, 10:44 AM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -733,7 +824,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "07:20 AM",
     "rawDate": "November 14, 7:20 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -741,7 +833,8 @@
     "dayStr": "2026-11-14",
     "timeStr": "12:21 AM",
     "rawDate": "November 14, 12:21 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -749,7 +842,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "11:40 PM",
     "rawDate": "November 13, 11:40 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -757,7 +851,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "09:36 PM",
     "rawDate": "November 13, 9:36 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -765,7 +860,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "08:40 PM",
     "rawDate": "November 13, 8:40 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -773,7 +869,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "06:59 PM",
     "rawDate": "November 13, 6:59 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -781,7 +878,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "06:24 PM",
     "rawDate": "November 13, 6:24 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -789,7 +887,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "05:21 PM",
     "rawDate": "November 13, 5:21 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -797,7 +896,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "05:21 PM",
     "rawDate": "November 13, 5:21 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -805,7 +905,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "03:44 PM",
     "rawDate": "November 13, 3:44 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -813,7 +914,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "03:44 PM",
     "rawDate": "November 13, 3:44 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -821,7 +923,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "02:07 PM",
     "rawDate": "November 13, 2:07 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -829,7 +932,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "01:32 PM",
     "rawDate": "November 13, 1:32 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "ana2006 bouchra",
@@ -837,7 +941,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "12:56 PM",
     "rawDate": "November 13, 12:56 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -845,7 +950,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "11:45 AM",
     "rawDate": "November 13, 11:45 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -853,7 +959,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "10:39 AM",
     "rawDate": "November 13, 10:39 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -861,7 +968,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "09:44 AM",
     "rawDate": "November 13, 9:44 AM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -869,7 +977,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "02:00 AM",
     "rawDate": "November 13, 2:00 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -877,7 +986,8 @@
     "dayStr": "2026-11-13",
     "timeStr": "12:46 AM",
     "rawDate": "November 13, 12:46 AM",
-    "count": 1
+    "count": 1,
+    "status": "fausse commande"
   },
   {
     "user": "Raouf Bentaiba",
@@ -885,7 +995,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "11:50 PM",
     "rawDate": "November 12, 11:50 PM",
-    "count": 1
+    "count": 1,
+    "status": "fausse commande"
   },
   {
     "user": "Raouf Bentaiba",
@@ -893,7 +1004,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "11:13 PM",
     "rawDate": "November 12, 11:13 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -901,7 +1013,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "10:31 PM",
     "rawDate": "November 12, 10:31 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -909,7 +1022,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "09:49 PM",
     "rawDate": "November 12, 9:49 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -917,7 +1031,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "08:27 PM",
     "rawDate": "November 12, 8:27 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -925,7 +1040,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "05:33 PM",
     "rawDate": "November 12, 5:33 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -933,7 +1049,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "04:43 PM",
     "rawDate": "November 12, 4:43 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -941,7 +1058,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "03:41 PM",
     "rawDate": "November 12, 3:41 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -949,7 +1067,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "02:50 PM",
     "rawDate": "November 12, 2:50 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -957,7 +1076,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "12:42 PM",
     "rawDate": "November 12, 12:42 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -965,7 +1085,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "12:42 PM",
     "rawDate": "November 12, 12:42 PM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "ana2006 bouchra",
@@ -973,7 +1094,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "10:09 AM",
     "rawDate": "November 12, 10:09 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -981,7 +1103,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "10:09 AM",
     "rawDate": "November 12, 10:09 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -989,7 +1112,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "09:31 AM",
     "rawDate": "November 12, 9:31 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -997,7 +1121,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "08:36 AM",
     "rawDate": "November 12, 8:36 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -1005,7 +1130,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "08:36 AM",
     "rawDate": "November 12, 8:36 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1013,7 +1139,8 @@
     "dayStr": "2026-11-12",
     "timeStr": "01:23 AM",
     "rawDate": "November 12, 1:23 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1021,7 +1148,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "11:43 PM",
     "rawDate": "November 11, 11:43 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1029,7 +1157,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "08:36 PM",
     "rawDate": "November 11, 8:36 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1037,7 +1166,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "05:31 PM",
     "rawDate": "November 11, 5:31 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -1045,7 +1175,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "05:31 PM",
     "rawDate": "November 11, 5:31 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1053,7 +1184,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "03:44 PM",
     "rawDate": "November 11, 3:44 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1061,7 +1193,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "02:58 PM",
     "rawDate": "November 11, 2:58 PM",
-    "count": 1
+    "count": 1,
+    "status": "fausse commande"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1069,7 +1202,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "02:05 PM",
     "rawDate": "November 11, 2:05 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "ana2006 bouchra",
@@ -1077,7 +1211,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "12:42 PM",
     "rawDate": "November 11, 12:42 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1085,7 +1220,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "12:42 PM",
     "rawDate": "November 11, 12:42 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1093,7 +1229,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "11:10 AM",
     "rawDate": "November 11, 11:10 AM",
-    "count": 1
+    "count": 1,
+    "status": "fausse commande"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1101,7 +1238,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "10:31 AM",
     "rawDate": "November 11, 10:31 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1109,7 +1247,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "09:30 AM",
     "rawDate": "November 11, 9:30 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1117,7 +1256,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "03:34 AM",
     "rawDate": "November 11, 3:34 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1125,7 +1265,8 @@
     "dayStr": "2026-11-11",
     "timeStr": "12:13 AM",
     "rawDate": "November 11, 12:13 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1133,7 +1274,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "09:55 PM",
     "rawDate": "November 10, 9:55 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1141,7 +1283,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "08:26 PM",
     "rawDate": "November 10, 8:26 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1149,7 +1292,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "07:20 PM",
     "rawDate": "November 10, 7:20 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -1157,7 +1301,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "07:20 PM",
     "rawDate": "November 10, 7:20 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Sami Bentaiba",
@@ -1165,7 +1310,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "06:24 PM",
     "rawDate": "November 10, 6:24 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1173,7 +1319,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "06:24 PM",
     "rawDate": "November 10, 6:24 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -1181,7 +1328,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "06:24 PM",
     "rawDate": "November 10, 6:24 PM",
-    "count": 1
+    "count": 1,
+    "status": "fausse commande"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1189,7 +1337,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "03:32 PM",
     "rawDate": "November 10, 3:32 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1197,7 +1346,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "01:46 PM",
     "rawDate": "November 10, 1:46 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1205,7 +1355,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "10:29 AM",
     "rawDate": "November 10, 10:29 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1213,7 +1364,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "09:51 AM",
     "rawDate": "November 10, 9:51 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1221,7 +1373,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "08:57 AM",
     "rawDate": "November 10, 8:57 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1229,7 +1382,8 @@
     "dayStr": "2026-11-10",
     "timeStr": "02:46 AM",
     "rawDate": "November 10, 2:46 AM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1237,7 +1391,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "10:29 PM",
     "rawDate": "November 9, 10:29 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1245,7 +1400,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "09:44 PM",
     "rawDate": "November 9, 9:44 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1253,7 +1409,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "07:32 PM",
     "rawDate": "November 9, 7:32 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1261,7 +1418,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "06:33 PM",
     "rawDate": "November 9, 6:33 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -1269,7 +1427,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "06:33 PM",
     "rawDate": "November 9, 6:33 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1277,7 +1436,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "04:08 PM",
     "rawDate": "November 9, 4:08 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1285,7 +1445,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "03:17 PM",
     "rawDate": "November 9, 3:17 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1293,7 +1454,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "02:44 PM",
     "rawDate": "November 9, 2:44 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -1301,7 +1463,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "12:37 PM",
     "rawDate": "November 9, 12:37 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1309,7 +1472,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "12:37 PM",
     "rawDate": "November 9, 12:37 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "ana2006 bouchra",
@@ -1317,7 +1481,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "11:10 AM",
     "rawDate": "November 9, 11:10 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -1325,7 +1490,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "10:09 AM",
     "rawDate": "November 9, 10:09 AM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1333,7 +1499,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "10:09 AM",
     "rawDate": "November 9, 10:09 AM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1341,7 +1508,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "09:01 AM",
     "rawDate": "November 9, 9:01 AM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1349,7 +1517,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "08:02 AM",
     "rawDate": "November 9, 8:02 AM",
-    "count": 1
+    "count": 1,
+    "status": "مكررة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1357,7 +1526,8 @@
     "dayStr": "2026-11-09",
     "timeStr": "12:14 AM",
     "rawDate": "November 9, 12:14 AM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1365,7 +1535,8 @@
     "dayStr": "2026-11-08",
     "timeStr": "11:23 PM",
     "rawDate": "November 8, 11:23 PM",
-    "count": 1
+    "count": 1,
+    "status": "fausse commande"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1373,7 +1544,8 @@
     "dayStr": "2026-11-08",
     "timeStr": "09:52 PM",
     "rawDate": "November 8, 9:52 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1381,7 +1553,8 @@
     "dayStr": "2026-11-08",
     "timeStr": "07:28 PM",
     "rawDate": "November 8, 7:28 PM",
-    "count": 1
+    "count": 1,
+    "status": "fausse commande"
   },
   {
     "user": "ana2006 bouchra",
@@ -1389,7 +1562,8 @@
     "dayStr": "2026-11-08",
     "timeStr": "06:24 PM",
     "rawDate": "November 8, 6:24 PM",
-    "count": 1
+    "count": 1,
+    "status": "ملغية"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1397,7 +1571,8 @@
     "dayStr": "2026-11-08",
     "timeStr": "05:01 PM",
     "rawDate": "November 8, 5:01 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "ana2006 bouchra",
@@ -1405,7 +1580,8 @@
     "dayStr": "2026-11-08",
     "timeStr": "04:10 PM",
     "rawDate": "November 8, 4:10 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1413,7 +1589,8 @@
     "dayStr": "2026-11-08",
     "timeStr": "04:10 PM",
     "rawDate": "November 8, 4:10 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   },
   {
     "user": "Raouf Bentaiba",
@@ -1421,6 +1598,7 @@
     "dayStr": "2026-11-08",
     "timeStr": "02:23 PM",
     "rawDate": "November 8, 2:23 PM",
-    "count": 1
+    "count": 1,
+    "status": "مؤكدة"
   }
 ]

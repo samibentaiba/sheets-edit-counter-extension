@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sheets Edit Counter - Maisonette Deco</title>
+  <title>Maisonette Deco - تتبع حالات الطلبيات</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
@@ -11,137 +11,145 @@
     <!-- Header -->
     <header class="header">
       <div class="header-title">
-        <div class="logo">📊</div>
+        <div class="logo">📦</div>
         <div>
-          <h1>Sheets Edit Counter</h1>
+          <h1>تتبع حالات الطلبيات (Order States Tracker)</h1>
           <p class="subtitle">تأكيد طلبيات maisonette deco</p>
         </div>
       </div>
-      <span id="sheetStatus" class="status-badge checking">Checking Tab...</span>
+      <span id="sheetStatus" class="status-badge connected">جاهز للفحص</span>
     </header>
 
-    <!-- Period & Collaborator Filters -->
+    <!-- State KPI Chips Display (The 4 States from your image) -->
+    <section class="states-banner">
+      <div class="state-chip chip-confirmed">
+        <span class="chip-label">مؤكدة</span>
+        <span id="kpiConfirmed" class="chip-count">0</span>
+      </div>
+      <div class="state-chip chip-cancelled">
+        <span class="chip-label">ملغية</span>
+        <span id="kpiCancelled" class="chip-count">0</span>
+      </div>
+      <div class="state-chip chip-duplicate">
+        <span class="chip-label">مكررة</span>
+        <span id="kpiDuplicate" class="chip-count">0</span>
+      </div>
+      <div class="state-chip chip-fake">
+        <span class="chip-label">fausse commande</span>
+        <span id="kpiFake" class="chip-count">0</span>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
     <section class="section">
       <div class="filter-group">
-        <label class="section-label">الفترة (Time Period):</label>
+        <label class="section-label">تحديد الفترة الزمنية:</label>
         <div class="btn-group">
-          <button class="pill-btn active" data-period="today">اليوم (Today)</button>
-          <button class="pill-btn" data-period="week">أسبوع (7 Days)</button>
-          <button class="pill-btn" data-period="month">الشهر (Month)</button>
-          <button class="pill-btn" data-period="custom">مخصص (Range)</button>
+          <button class="pill-btn" data-period="today">اليوم</button>
+          <button class="pill-btn" data-period="week">7 أيام</button>
+          <button class="pill-btn active" data-period="month">هذا الشهر</button>
+          <button class="pill-btn" data-period="custom">من تاريخ إلى تاريخ</button>
         </div>
       </div>
 
       <!-- Custom Date Range Picker -->
       <div id="customDateContainer" class="date-range-row hidden">
         <div class="input-field">
-          <label for="startDate">من تاريخ (Start):</label>
+          <label for="startDate">من تاريخ (From):</label>
           <input type="date" id="startDate">
         </div>
         <div class="input-field">
-          <label for="endDate">إلى تاريخ (End):</label>
+          <label for="endDate">إلى تاريخ (To):</label>
           <input type="date" id="endDate">
         </div>
-        <button id="applyCustomDateBtn" class="apply-btn">تطبيق (Apply)</button>
+        <button id="applyCustomDateBtn" class="apply-btn">تطبيق</button>
       </div>
 
       <!-- Collaborator Filter Dropdown -->
       <div class="user-select-row">
-        <label for="userFilter">المستخدم (Collaborator):</label>
+        <label for="userFilter">تصفية حسب العضو (Collaborator):</label>
         <select id="userFilter">
           <option value="ALL">جميع الأعضاء (All Collaborators)</option>
         </select>
       </div>
     </section>
 
-    <!-- KPI Summary Cards -->
-    <section class="kpi-grid">
-      <div class="kpi-card highlight">
-        <span class="kpi-title">تعديلات الفترة (Selected Edits)</span>
-        <span id="kpiSelectedEdits" class="kpi-value">0</span>
+    <!-- Total Processed Metric Card -->
+    <section class="total-processed-card">
+      <div class="tpc-info">
+        <span class="tpc-label">إجمالي الطلبيات المحددة حالتها (Total Orders Set to a State)</span>
+        <span class="tpc-desc">مجموع: مؤكدة + ملغية + مكررة + fausse commande</span>
       </div>
-      <div class="kpi-card">
-        <span class="kpi-title">الجلسات (Sessions)</span>
-        <span id="kpiSessions" class="kpi-value">0</span>
-      </div>
-      <div class="kpi-card">
-        <span class="kpi-title">المجموع الكلي (All-Time)</span>
-        <span id="kpiTotalEdits" class="kpi-value">0</span>
+      <div class="tpc-value-box">
+        <span id="kpiTotalProcessed" class="tpc-number">0</span>
+        <span class="tpc-unit">طلبية معالجة</span>
       </div>
     </section>
 
-    <!-- Tabs: Collaborator Breakdown & Daily Breakdown -->
+    <!-- Tabs Navigation -->
     <div class="tab-nav">
-      <button class="tab-btn active" data-tab="tabCollaborators">ملخص الأعضاء (By User)</button>
-      <button class="tab-btn" data-tab="tabDaily">يوم بيوم (Daily Breakdown)</button>
+      <button class="tab-btn active" data-tab="tabCollaborators">حالات الطلبيات لكل عضو</button>
+      <button class="tab-btn" data-tab="tabDaily">التفصيل اليومي (يوم بيوم)</button>
     </div>
 
-    <!-- Tab 1: Collaborators Breakdown Table -->
+    <!-- Tab 1: Collaborators States Breakdown Table -->
     <section id="tabCollaborators" class="table-section tab-content active">
       <div class="table-header-row">
-        <span class="section-label">تفصيل التعديلات لكل عضو</span>
-        <span id="recordCount" class="record-count">0 users</span>
+        <span class="section-label">توزيع حالات الطلبيات حسب العضو</span>
+        <span id="recordCount" class="record-count">3 أعضاء</span>
       </div>
       <div class="table-scroll">
         <table id="statsTable">
           <thead>
             <tr>
               <th>العضو (Collaborator)</th>
-              <th>اليوم</th>
-              <th>الأسبوع</th>
-              <th>الشهر</th>
-              <th id="thCustomRange">المخصص</th>
-              <th>المجموع</th>
+              <th class="col-conf">مؤكدة</th>
+              <th class="col-canc">ملغية</th>
+              <th class="col-dup">مكررة</th>
+              <th class="col-fake">fausse</th>
+              <th class="col-total">المجموع</th>
+              <th class="col-rate">% التأكيد</th>
             </tr>
           </thead>
           <tbody id="statsTableBody">
-            <tr class="empty-row">
-              <td colspan="6">افتح Version history في الشيت ثم اضغط "Scan Sheet".</td>
-            </tr>
+            <!-- Dynamic rows -->
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Tab 2: Daily Breakdown Table (Day-by-Day) -->
+    <!-- Tab 2: Daily Breakdown Table (Day by Day) -->
     <section id="tabDaily" class="table-section tab-content">
       <div class="table-header-row">
-        <span class="section-label">التعديلات اليومية لكل عضو</span>
-        <span class="record-count" id="dailyDaysCount">0 days</span>
+        <span class="section-label">توزيع الحالات يوماً بيوم</span>
+        <span class="record-count" id="dailyDaysCount">0 يوم مسجل</span>
       </div>
       <div class="table-scroll">
         <table id="dailyTable">
           <thead>
-            <tr id="dailyTableHeaders">
-              <th>التاريخ (Date)</th>
-              <th>Raouf</th>
-              <th>Bouchra</th>
-              <th>Sami</th>
-              <th>المجموع</th>
+            <tr>
+              <th>التاريخ</th>
+              <th class="col-conf">مؤكدة</th>
+              <th class="col-canc">ملغية</th>
+              <th class="col-dup">مكررة</th>
+              <th class="col-fake">fausse</th>
+              <th class="col-total">المجموع</th>
             </tr>
           </thead>
           <tbody id="dailyTableBody">
-            <tr class="empty-row">
-              <td colspan="5">لا توجد بيانات يومية بعد.</td>
-            </tr>
+            <!-- Dynamic daily rows -->
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Bottom Actions -->
+    <!-- Footer Actions -->
     <footer class="footer">
-      <button id="scanBtn" class="primary-btn" title="Scan Version History in Sheet">
-        <span>🔄</span> فحص الشيت (Scan Sheet)
+      <button id="scanBtn" class="primary-btn" title="Scan Sheet Statuses">
+        <span>🔄</span> فحص حالات الشيت (Scan States)
       </button>
-      <button id="deepScanBtn" class="accent-btn" title="Auto-click each version to extract exact cell edits">
-        <span>⚡</span> فحص دقيق (Deep Scan)
-      </button>
-      <button id="exportBtn" class="secondary-btn" title="Export as CSV">
-        <span>📥</span> CSV
-      </button>
-      <button id="demoBtn" class="ghost-btn" title="Load your team's real data from screenshots">
-        🧪 بيانات تجريبية
+      <button id="exportBtn" class="secondary-btn" title="Export as CSV for Excel">
+        <span>📥</span> تصدير Excel (CSV)
       </button>
     </footer>
   </div>
