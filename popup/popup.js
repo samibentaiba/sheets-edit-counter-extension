@@ -288,9 +288,8 @@ function exportCSV() {
     return;
   }
 
-  let csvContent = '﻿';
-  csvContent += 'المستخدم (User),التاريخ (Date),التوقيت (Time),عدد التعديلات (Edits)
-';
+  let csvContent = '\uFEFF';
+  csvContent += 'المستخدم (User),التاريخ (Date),التوقيت (Time),عدد التعديلات (Edits)\n';
 
   allEditsData.forEach(row => {
     csvContent += `"${row.user}","${row.dayStr || row.date}","${row.timeStr || ''}",${row.count || 1}\n`;
